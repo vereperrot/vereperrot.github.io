@@ -41,9 +41,11 @@
 <script>
 $(document).ready(function(){
       console.log($('#banner').attr('class'));
-      console.log($('#home').attr('class'));
+      console.log($('#home'));
+      console.log($('#home').html());
       $('#home').addClass('visit');
-      console.log($('#home').attr('class'));
+      console.log($('#home'));
+      console.log($('#home').html());
       console.log('add visit class');
 });
 </script>
