@@ -6,6 +6,7 @@ $(function(){
       var file = 'views/' + $(this).data('include') + '.html';
       console.log(file);
       $(this).load(file);
+ $('#home').addClass('visit');
     });
   });
 
