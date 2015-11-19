@@ -53,5 +53,5 @@ $(function() {
   $('img.box').hover(sourceSwap, sourceSwap);
 });
 $(function() {
-  $("#menu").menu();
+  //$("#menu").menu();
 });
