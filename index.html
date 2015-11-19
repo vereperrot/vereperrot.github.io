@@ -57,8 +57,11 @@
 <script>
   $(function(){
     var includes = $('.include');
+
+      console.log(includes);
     jQuery.each(includes, function(){
       var file = 'views/' + $(this).data('include') + '.html';
+      console.log(file);
       $(this).load(file);
     });
   });

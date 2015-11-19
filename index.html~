@@ -49,16 +49,20 @@
 </div>
   <div class="col-xs-6 photo"></div>
 </div>
-<div class="row footer">
+<div class="row footer include"  data-include="footer">
 
 
 </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script> 
-$(document).ready(function(){
-      $(".footer").load("footer.html"); 
-});
-    </script> 
+<script>
+  $(function(){
+    var includes = $('.include');
+    jQuery.each(includes, function(){
+      var file = 'views/' + $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+</script>
 
     
     
