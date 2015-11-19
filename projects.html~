@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Vere Perrot Portfolio | Projects</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lora'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="row banner">
+  <div class="col-xs-1">
+    <a href="/" class="bold">VEREPERROT</a>
+  </div>
+  <div class="col-xs-5">
+  </div>
+  <div class="col-xs-2">
+    <a class=" visit bold"  href="projects.html">Projects</a>
+  </div>
+  <div class="col-xs-2">
+    <a href="https://twitter.com/vereperrot">Twitter</a>
+  </div>
+  <div class="col-xs-2">
+    <a href="https://github.com/perrot">Github</a>
+  </div>
+</div>
+<div class="content">
+  <div class="row">
+    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/voteplex%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/voteplex%20thumb.png" title="Voting App" class="box img-border" /></div>
+    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/stockmarket%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/stockmarket%20thumb.png" title="Stock Market Graph" class=" box" /></div>
+    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/nightlife-herokuapp-com%20thumb%20gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/nightlife-herokuapp-com%20thumb.png" title="Nightlife App" class="box" /></div>
+    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/winterest%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/winterest%20thumb.png" title="Pinterest Clone App" class=" box" /></div>
+    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/bookjump%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/bookjump%20thumb.png" title="Book Trade App" class=" box" /></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="https://dl.dropboxusercontent.com/u/1017725/images/voteplex.png" width="100%" class="site" />
+
+    </div>
+  </div>
+  <div style="background:white;font-size:16px;padding:10px">
+    <p id="summary"><a href="http://perrot-votingapp.herokuapp.com/" style="font-weight:bold">Voting App</a>
+      <br/> An authenticated user can create/delete the vote. And can share the vote to others.</p>
+    <div style="text-align:right">
+      <button id="btn-link" class="btn dimgray" onclick="window.location.href='http://perrot-votingapp.herokuapp.com/'"><i class="fa fa-link fa-lg icon btn-hover"></i></button>
+      <button id="btn-git" class="btn dimgray" onclick="window.location.href='https://github.com/perrot/votingapp.git'"><i class="fa fa-github fa-lg icon  btn-hover"></i></button>
+    </div>
+  </div>
+</div>
+<div class="row footer">
+  <button class="btn dimgray" onclick="window.location.href='https://freecodecamp.com/perrot'"><i class="fa fa-fire fa-lg icon btn-hover"></i></button>
+  <button class="btn dimgray" onclick="window.location.href='https://twitter.com/vereperrot'"><i class="fa fa-twitter fa-lg icon  btn-hover"></i></button>
+  <button class="btn dimgray" onclick="window.location.href='https://github.com/perrot'"><i class="fa fa-github fa-lg icon  btn-hover"></i></button>
+  <br/>
+  <br/>
+  Copyright &copy; Vere Perrot 2015
+
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
