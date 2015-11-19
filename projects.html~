@@ -23,15 +23,15 @@
 </div>
 <div class="content" style="background: #262626;">
   <div class="row">
-    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/voteplex%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/voteplex%20thumb.png" title="Voting App" class="box img-border" /></div>
-    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/stockmarket%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/stockmarket%20thumb.png" title="Stock Market Graph" class=" box" /></div>
-    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/nightlife-herokuapp-com%20thumb%20gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/nightlife-herokuapp-com%20thumb.png" title="Nightlife App" class="box" /></div>
-    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/winterest%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/winterest%20thumb.png" title="Pinterest Clone App" class=" box" /></div>
-    <div class="col-xs-2"><img src="https://dl.dropboxusercontent.com/u/1017725/images/bookjump%20thumb gray.png" data-alt-src="https://dl.dropboxusercontent.com/u/1017725/images/bookjump%20thumb.png" title="Book Trade App" class=" box" /></div>
+    <div class="col-xs-2"><img src="images/voteplex%20thumb gray.png" data-alt-src="images/voteplex%20thumb.png" title="Voting App" class="box img-border" /></div>
+    <div class="col-xs-2"><img src="images/stockmarket%20thumb gray.png" data-alt-src="images/stockmarket%20thumb.png" title="Stock Market Graph" class=" box" /></div>
+    <div class="col-xs-2"><img src="images/nightlife-herokuapp-com%20thumb%20gray.png" data-alt-src="images/nightlife-herokuapp-com%20thumb.png" title="Nightlife App" class="box" /></div>
+    <div class="col-xs-2"><img src="images/winterest%20thumb gray.png" data-alt-src="images/winterest%20thumb.png" title="Pinterest Clone App" class=" box" /></div>
+    <div class="col-xs-2"><img src="images/bookjump%20thumb gray.png" data-alt-src="images/bookjump%20thumb.png" title="Book Trade App" class=" box" /></div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <img src="https://dl.dropboxusercontent.com/u/1017725/images/voteplex.png" width="100%" class="site" />
+      <img src="images/voteplex.png" width="100%" class="site" />
 
     </div>
   </div>
