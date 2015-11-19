@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Vere Perrot Portfolio | Home</title>
     
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='css/font-awesome.min.css'>
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lora'>
 
         <link rel="stylesheet" href="css/style.css">
@@ -17,7 +17,7 @@
 
   <body>
 
-    <div id="banner" class="row banner include"  data-include="banner">
+    <div id="banner" class="row banner include"  data-include="home-banner">
 
 </div>
 <div class="row content">

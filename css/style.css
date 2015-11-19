@@ -37,7 +37,7 @@ a:hover {
 }
 
 body {
-  background: #EEE url(http://www.opendesigns.org/od/wp-content/designs/2/2471/images/light.png);
+  background: #EEE url('../images/light.png');
   color: #444;
   font-family: 'Lora', serif;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .photo {
-  background-image: url('http://www.opendesigns.org/od/wp-content/designs/2/2471/images/home_2.jpg');
+  background-image: url('../images/home_2.jpg');
   background-repeat: no-repeat;
   background-color: darkgray;
   height: 320px;
