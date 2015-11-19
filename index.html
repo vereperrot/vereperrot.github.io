@@ -17,7 +17,7 @@
 
   <body>
 
-    <div class="row banner include"  data-include="banner">
+    <div id="banner" class="row banner include"  data-include="banner">
 
 </div>
 <div class="row content">
@@ -40,6 +40,7 @@
     <script src="js/index.js"></script>
 <script>
 $(document).ready(function(){
+      console.log($('#banner').attr('class'));
       console.log($('#home').attr('class'));
       $('#home').addClass('visit');
       console.log($('#home').attr('class'));
