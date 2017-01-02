@@ -40,6 +40,10 @@ $('.box').click(function() {
     $('#summary').html('<a href="https://perrot-bookjump.herokuapp.com/" style="font-weight:bold">' + $(this).attr('title') + '</a><br/>A user can view all books added by every users, and can add or remove the books. Request a book trade, the others can accept this trade.');
     $('#btn-link').attr("onclick", "window.location.href='https://perrot-bookjump.herokuapp.com/'");
     $('#btn-git').attr("onclick", "window.location.href='https://github.com/perrot/bookjump-app.git'");
+  } else if ($(this).attr('title') == "HOW STRENGTH IS MY PASSWORD?") {
+    $('#summary').html('<a href="http://perrot.github.io/howstrengthismyps/index.html" style="font-weight:bold">' + $(this).attr('title') + '</a><br/>A tool I can check my password is strength enough. And create three level strength password by clicking a button. If the password is strong, copy it by clicking a button. ');
+    $('#btn-link').attr("onclick", "window.location.href='http://perrot.github.io/howstrengthismyps/index.html'");
+    $('#btn-git').attr("onclick", "window.location.href='http://perrot.github.io/howstrengthismyps/index.html'");
   }
   //$(this).css('border',"2px solid #F6007F");
 })
