@@ -12,6 +12,7 @@ http://stackoverflow.com/questions/948172/password-strength-meter
   <link rel="stylesheet" href="../tool-css/bootstrap.min.css">
   <script src="../tool-js/jquery.min.js"></script>
   <script src="../tool-js/bootstrap.min.js"></script>
+  <script src="../tool-js/utility.js"></script>
   <script>
   function scorePassword(pass) {
     var score = 0;
@@ -139,7 +140,13 @@ function copyToClipboard(elem) {
     return succeed;
 }
 var MAX=50;
+var query="";
+query=qs("q");
+if(query.length>0){
+$("#password").val(query);
+}else{
 $("#password").val(password_generator(getRandomInt(1,MAX)));
+}
 	fireInput($('#password'));
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
