@@ -12,7 +12,7 @@ http://stackoverflow.com/questions/948172/password-strength-meter
   <link rel="stylesheet" href="../tool-css/bootstrap.min.css">
   <script src="../tool-js/jquery.min.js"></script>
   <script src="../tool-js/bootstrap.min.js"></script>
-  <script src="../tool-js/utility.min.js"></script>
+  <script src="../tool-js/utility.js"></script>
   <script>
   function scorePassword(pass) {
     var score = 0;
