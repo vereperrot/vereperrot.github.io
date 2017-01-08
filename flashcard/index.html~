@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SPEAK TO THE JAPANESE FLASHCARD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../tool-css/bootstrap.min.css">
+  <script src="../tool-js/jquery.min.js"></script>
+  <script src="../tool-js/bootstrap.min.js"></script>
+  <script src="../tool-js/utility.js"></script>
+  <script>
+  
+
+
+$(document).ready(function() {
+		$('.panel-body').hide();
+		$('#password').focus();
+var cards=[];
+addCard("やわらか","yawaraka","soft");
+addCard("やわらかな日差し","yawaraka na hizashi","a soft sunlight");
+addCard("ピカピカ","pikapika","shiny");
+addCard("ピカピカのランドセル","pikapika no randoseru","a shiny school bag");
+addCard("ランドセル","rendoseru","ransel;backpack");
+function addCard(w,s,t)
+{
+var card = {word:w, sound:s,tr:t, right:0};
+cards.push(card);
+}
+var linesIndex=[];
+for(var i=0;i<cards.length;i++){
+		linesIndex.push(i);
+	}
+	linesIndex = shuffle(linesIndex);
+	console.log(linesIndex);
+	
+	var curIndex=0;
+	loadCard();
+function play(text,lang){
+var audio = new Audio();
+audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl='+lang+'&q='+text+'&client=tw-ob';
+audio.play();
+}
+function loadCard(){
+		    $('#count').text((curIndex+1)+"/"+cards.length);
+		    $('.panel-body').hide();
+card=cards[linesIndex[curIndex]];
+play(card["tr"],'en');
+$('.panel-heading').html(card["tr"]);
+$('.panel-body').html("<span id='word' style='font-weight: bolder;font-size: xx-large;'>"+card["word"]+"</span></br><span style='text-decoration: underline;font-size: x-large;font-style: italic;color: darkgrey;'>"+card["sound"]+"<span>");
+}
+function goNext(){
+		    curIndex++;
+		    if(curIndex==cards.length){
+		    $('#word').text('all test complete,press F5 to restart test');
+		    }else{
+	loadCard();
+		$('#password').val('');
+		$('#password').focus();
+		
+}
+$("#password").on("change keypress keyup keydown", function() {
+		    console.log($(this).val()+','+$('#word').text());
+		    if($(this).val().toLowerCase()=="pass"){
+		    console.log("==pass==");
+		    $('.panel-body').show();
+play($('#word').text(),'ja');
+		$('#password').val('');
+		$('#password').focus();
+		    }else 
+		    if($(this).val().toLowerCase()=="next"){
+		    console.log("==next==");
+		    goNext();
+		    }else 
+		    if($(this).val()==$('#word').text()&&$(this).val().length>0){
+		    console.log("==match=="+$(this).val()+','+$('word').text());
+		    goNext();
+		    }
+        //$("#strength_human").text(checkPassStrength(pass));
+        //$("#strength_score").text(scorePassword(pass));
+    });
+});
+</script>
+</head>
+<body>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- HOW STRENGTH IS MY PASSWORD? -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2865072968912801"
+     data-ad-slot="8053956020"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="container">
+  <h2 style="font-size: xx-large;
+    font-weight: bolder;text-align: center;">SPEAK TO THE JAPANESE FLASHCARD</h2>
+<div class="panel panel-info">
+      <div class="panel-heading" style="font-weight: bolder;
+    font-size: xx-large;"></div>
+      <div class="panel-body"></div>
+	    <input id="password" type="text"  class="form-control input-lg" name="password" placeholder="Speak 'Pass','OK','Next' or japanese language">
+    </div>
+
+  <div class="row">
+	  <span id="count"></span>
+  </div>
+  <br/>
+  <div class="row">
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-danger btn-lg btn-block" id="weakbtn"><i class="glyphicon glyphicon-unchecked"id="weak"></i> Pass</button></div>
+   <!-- 
+    <div class="col-xs-6">
+    <button type="button" class="btn btn-success btn-lg btn-block" id="strongbtn"><span class="glyphicon glyphicon-unchecked" id="strong"> OK</button></div>
+-->
+  </div>
+  <hr/>
+  <div style="text-align: center;">
+	  Created by <a href="https://twitter.com/vereperrot">Vere Perrot</a><br/>
+	  Thanks for <a href="https://jquery.com/">jQuery</a> and <a href="getbootstrap.com/">bootstrap</a> <br/>
+© Code Bear, 2016 / Version 1.2<br/>
+Your password will not be sent over the internet.<br/>
+</div>
+</div>
+
+</body>
+</html>
+
