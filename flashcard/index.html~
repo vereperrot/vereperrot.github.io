@@ -22,6 +22,70 @@ addCard("やわらかな日差し","yawaraka na hizashi","a soft sunlight");
 addCard("ピカピカ","pikapika","shiny");
 addCard("ピカピカのランドセル","pikapika no randoseru","a shiny school bag");
 addCard("ランドセル","rendoseru","ransel;backpack");
+addCard("日差し","hizashi","sunlight");
+addCard("さわやか","sawayaka","fresh");
+addCard("春","haru","Spring");
+addCard("風","kaze","wind");
+addCard("春のさわやかな風","haru no sawayaka na kaze","The fresh wind of Spring");
+addCard("ぼかぼか","bokaboka","snug");
+addCard("春の日差しはぼかぼかだ","haru no hizashi wa bokaboka da","The sunlight in spring is snug");
+addCard("ドキドキする","dokidoki suru","to get excited (nervous)");
+addCard("好きな人に会うとドキドキする","suki na hito ni auto dokidoki suru","I get excited when I see the person I like");
+addCard("会う","au","meet");
+addCard("始まる","hazimaru","to get started");
+addCard("四月","shigatsu","April");
+addCard("四月は新しいことがたくさん始める","shigatsu wa atarashi koto ga takusan hazimeru","Many new things are starting in April");
+addCard("わくわくする","wakuwakusuru","to get excited(anticipation)");
+addCard("次の日に楽しい事があるとわくわくする","tsugi no hi ni tanoshii koto ga aruto wakuwakusuru","I'm excited when fun stuff is coming up the next day");
+addCard("咲く","saku","to bloom");
+addCard("桜の花が咲く","sakura no hana ga saku","the cherry blossoms are blooming");
+addCard("緊張する","kin chyoo suru","to be nervous");
+addCard("人前に出ると緊張する","hitomae ni deruto kin chyoo suru","I'm so nervous in front of people");
+addCard("出る","deru","appear");
+addCard("怖い","kowai","scary");
+addCard("お化けは怖い","obake wa kowai","Ghosts are scary");
+addCard("作る","tsukuru","to make");
+addCard("晩ご飯を作る","bangohan o tsukuru","I make dinner");
+addCard("嫌い","kirai","hate");
+addCard("寒いのは嫌い","samuino wa kirai","I hate the cold");
+addCard("暗い","kurai","dark");
+addCard("夜は暗い","yoru wa kurai","night is dark");
+addCard("黒い","kuroi","black");
+addCard("宇宙は黒い","uchuu wa kuroi","outer space is black");
+addCard("宇宙","uchuu","outer space");
+addCard("マグロ","maguro","tuna");
+addCard("マグロはお寿司の定番だ","maguro wa osushi no teiban da","Tuna is a classic sushi dish");
+addCard("定番","teiban","classic");
+addCard("トロ","toro","fatty runa");
+addCard("トロは好きですか","toro wa sukidesuka","Do you like fatty runa");
+addCard("サーモン","saamon","salmon");
+addCard("海外","kaigai","overseas");
+addCard("サーモンは海外でも人気です","saamon wa kaigai demo ninki desu","Salmon is even popular overseas");
+addCard("ウニ","uni","sea urchin");
+addCard("高級","kookyuu","high class");
+addCard("食材","shokuzai","foodstuff");
+addCard("ウニは高級食材です","uni wa kookyuu shokuzai desu","sea urchin is a delicacy");
+addCard("イクラ","ikura","salmon eggs");
+addCard("子供","kodomo","children");
+addCard("子供たちが大好きなイクラ","kodomotachi ga taisuki na ikura","children love salmon eggs");
+addCard("だらだら","daradara","lazily");
+addCard("だらだらと休みを過ごす","daradara to yasumi o sugosu","to spend holidays lazily");
+addCard("グズグズ","guzuguzu","hesitating");
+addCard("言いたいことが言えなくてグズグズする","iitaikoto ga ienakute guzuguzu suru","i'm too hesitate to say what i really want to say");
+addCard("パラパラ","parapara","the sound of flipping through a book");
+addCard("ページをパラパラめくる","peezi o parapara mekuru","to flip over the pages");
+addCard("すっきり","sukkiri","refreshed");
+addCard("朝すっきり目覚める","asa sukkiri mezameru","to wake up feeling refreshed in the morning");
+addCard("目覚める","mezameru","wake up");
+addCard("うとうと","utouto","dozing off");
+addCard("かわいい","kawaii","cute");
+addCard("かわいいねえ","kawaii ne","cute , isn't it");
+addCard("かっくいい","kakuii","cool");
+addCard("かっくいいねえ","kakuii ne","cool,isn't it");
+addCard("センスがある","sansugaaru","to have good taste");
+addCard("お兄さん、センスがあるねえ","oniisan sensuarimasu ne","You have good taste, sir");
+addCard("きれい","kirei","beautiful");
+addCard("あなたはきれいです。本当です","anata wa kirei desu. hontoo desu","You are beautiful.I mean it.本当");
 function addCard(w,s,t)
 {
 var card = {word:w, sound:s,tr:t, right:0};
@@ -53,22 +117,24 @@ function goNext(){
 		    curIndex++;
 		    if(curIndex==cards.length){
 		    $('#word').text('all test complete,press F5 to restart test');
+		    alert('all test complete,press F5 to restart test');
 		    }else{
 	loadCard();
 		$('#password').val('');
 		$('#password').focus();
-		
+		    }
 }
 $("#password").on("change keypress keyup keydown", function() {
 		    console.log($(this).val()+','+$('#word').text());
-		    if($(this).val().toLowerCase()=="pass"){
+		    if($(this).val().toLowerCase()=="パス"){
 		    console.log("==pass==");
 		    $('.panel-body').show();
 play($('#word').text(),'ja');
 		$('#password').val('');
 		$('#password').focus();
 		    }else 
-		    if($(this).val().toLowerCase()=="next"){
+		    //if($(this).val().toLowerCase()=="次"){
+		    if($(this).val()=="次" ||$(this).val()=="つぎ"){
 		    console.log("==next==");
 		    goNext();
 		    }else 
@@ -99,7 +165,7 @@ play($('#word').text(),'ja');
       <div class="panel-heading" style="font-weight: bolder;
     font-size: xx-large;"></div>
       <div class="panel-body"></div>
-	    <input id="password" type="text"  class="form-control input-lg" name="password" placeholder="Speak 'Pass','OK','Next' or japanese language">
+	    <input id="password" type="text"  class="form-control input-lg" name="password" placeholder="Speak 'パス','次','つぎ' or japanese language">
     </div>
 
   <div class="row">
