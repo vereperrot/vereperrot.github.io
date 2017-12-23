@@ -5,4 +5,20 @@ https://stackedit.io/editor#
 https://twitter.com/stackedit/
 https://publish.twitter.com/#
 http://perrot.github.io
+
+git clone https://github.com/perrot/perrot.github.io.git
+git config --global user.name "perrot"
+git config --global user.email "linca30mus@gmail.com"
+git add -A
+git commit -a -m "add input method"
+git push -u https://github.com/perrot/perrot.github.io.git
+
+
+http://perrot.github.io/google_pinyin_input_method_exercise_book/index.html
+https://goo.gl/gFqp1D
+
+paypal.me/vereperrot/60TWD
+
+如果google拼音輸入法練習簿有幫到您的話，
+請Vere Perrot喝杯咖啡吧！
 -->
