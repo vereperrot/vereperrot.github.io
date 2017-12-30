@@ -10,10 +10,12 @@
     var idx=-1;
     $scope.test="";
     $scope.input = "";
+    console.log("ok");
 
     $scope.question = function() {
     	idx=Math.floor( Math.random() * ( (_data.length-1) + 1 ) );//from 0 to len-1
-		console.log(idx);
+		console.log("idx:"+idx);
+		console.log("_data.length:"+_data.length);
         $scope.test=_data[idx];
     };
     
@@ -69,14 +71,25 @@
 	//console.log($("#hint").html());
     };
 	$scope.loadHint();
-    
+
+
+	    var allPass=0;
     $scope.status = function() {
+	    if(allPass==count.length) return "";
       if($scope.input.length==0)return "";
       var tmp=0;
       for(var i=0;i<count.length;i++){
 	if(count[i]==0) break;
         tmp++;
       }
+	    allPass=0;
+      for(var i=0;i<count.length;i++){
+	if(count[i]!=0)
+        allPass++;
+      }
+	$scope.progress_now=Math.round((allPass/count.length)*100);
+	    console.log("progress:"+$scope.progress_now);
+
       var str="<table class=\"table table-striped\">";
       str+="<thead><tr><th>注音</th><th>拼音</th><th>次數</th>";
       str+="</tr></thead><tbody>";
@@ -120,5 +133,10 @@ $(document).ready(function () {
 	a.parent().addClass('active');
 
 	$("#idHint").text(a.text()+"提示");
+	$("#idRestart").text("重新練習"+a.text());
+	console.log("#idRestart:"+$("#idRestart").text());
+$("#idRestart").click(function(){
+	 window.location.reload();
+});
 });
 

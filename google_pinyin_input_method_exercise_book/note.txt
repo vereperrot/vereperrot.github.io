@@ -5,12 +5,15 @@ https://stackedit.io/editor#
 https://twitter.com/stackedit/
 https://publish.twitter.com/#
 http://perrot.github.io
+https://stackoverflow.com/questions/12050268/angularjs-make-a-simple-countdown
+https://www.w3schools.com/jsref/met_win_setinterval.asp
 
 git clone https://github.com/perrot/perrot.github.io.git
 git config --global user.name "perrot"
 git config --global user.email "linca30mus@gmail.com"
 git add -A
 git commit -a -m "add input method"
+git commit -F message_file.txt
 git push -u https://github.com/perrot/perrot.github.io.git
 
 

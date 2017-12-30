@@ -1,0 +1,31 @@
+<a href="#" onclick="setLanguage('en');location.reload();">English</a> 
+<a href="#" onclick="setLanguage('Es');location.reload();">Spanish</a>
+
+<div id="div1">date</div>
+<script>
+var language; 
+function getLanguage() {
+(localStorage.getItem('language') == null) ? setLanguage('en') : false;
+$.ajax({ 
+url:  '/language/' +  localStorage.getItem('language') + '.json', 
+dataType: 'json', async: false, dataType: 'json', 
+success: function (lang) { language = lang } });
+}
+
+function setLanguage(lang) {
+localStorage.setItem('language', lang);
+}
+</script>
+<!--
+	REF:https://stackoverflow.com/questions/46008760/how-to-build-multiple-language-website-using-pure-html-js-jquery
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+	    getLanguage();
+    $('#div1').text(language.date);
+    });
+
+    </script>
+    

@@ -18,6 +18,16 @@
 <div class="container">
 
 	<div ng-include="'nav.html'"></div>
+<div class="jumbotron" style="background: white;
+    border: 1px solid #ddd;">
+	<div class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+								   aria-valuenow="{{progress_now}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress_now}}%" id="pb">
+	  {{progress_now}}%
+  </div>
+</div>
+
+
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -35,8 +45,11 @@
       <input type="text" class="form-control"  autofocus ng-model="input" style="height: 60px;
     font-size: x-large;">
     </div>
+    </div> <!--end of jumbotron-->
+
 	      <ul class="pager">
 		  <li class="previous"><a href="index.html" >回到基本知識 》</a></li>
+		  <li class="previous"><a href="#" id="idRestart"></a></li>
 		</ul>
 </form>
 <form>
