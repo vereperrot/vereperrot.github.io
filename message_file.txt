@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.test adblock check
+1.add meta charset
