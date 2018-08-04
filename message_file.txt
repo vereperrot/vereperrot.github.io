@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.add meta charset
+1.file save as utf8 char

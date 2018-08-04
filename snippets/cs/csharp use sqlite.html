@@ -1,4 +1,4 @@
-<html>
+ï»¿<html>
 	<title>Vere Perrot Snippets</title>
 <head>
 <meta charset="UTF-8">
@@ -20,29 +20,29 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-	<h3>C#¨Ï¥Îsqlite</h3>
+	<h3>C#ä½¿ç”¨sqlite</h3>
 		<textarea rows="1" cols="1" value="" id="myInput" style="width: 5px;">
 	</textarea>
 
 <button onclick="copySnippet()">Copy text</button>
 <pre><code class="language-csharp">
-//´¡¤Juser¸ê®Æªí¡A¤@µ§email©M¦W¦rªº¬ö¿ı¡C
+//æ’å…¥userè³‡æ–™è¡¨ï¼Œä¸€ç­†emailå’Œåå­—çš„ç´€éŒ„ã€‚
 _dbCmd.CommandText = "INSERT INTO user(email,name) VALUES ('email','name')";
 _dbCmd.ExecuteNonQuery();
 
-dbCmd.CommandText = "INSERT INTO user(email,name) VALUES ('dd@com','³\Òõºû')";
+dbCmd.CommandText = "INSERT INTO user(email,name) VALUES ('dd@com','è¨±ç§ç¶­')";
 _dbCmd.ExecuteNonQuery();
 
-//§ó·suser¸ê®Æªí¡A±N¦W¬°bbnªº¦W¦r³£§ï¬°Codelicious
+//æ›´æ–°userè³‡æ–™è¡¨ï¼Œå°‡åç‚ºbbnçš„åå­—éƒ½æ”¹ç‚ºCodelicious
 _dbCmd.CommandText = "UPDATE user SET name = 'Codelicious' WHERE name = 'bbn'";
 _dbCmd.ExecuteNonQuery();  
 
-//§R°£user¸ê®Æªí
+//åˆªé™¤userè³‡æ–™è¡¨
 cmd.CommandText = "Drop Table user";
 cmd.ExecuteNonQuery();
 
-//¦buser¸ê®Æªí¤¤¡A·j´M¦W¬°'³\Òõºû'¡A¥Bemail¬°dd@comªº¬ö¿ı
-_dbCmd.CommandText = "SELECT ID, name,email FROM user where name='³\Òõºû' and email='dd@com'";
+//åœ¨userè³‡æ–™è¡¨ä¸­ï¼Œæœå°‹åç‚º'è¨±ç§ç¶­'ï¼Œä¸”emailç‚ºdd@comçš„ç´€éŒ„
+_dbCmd.CommandText = "SELECT ID, name,email FROM user where name='è¨±ç§ç¶­' and email='dd@com'";
 SQLiteDataReader reader = _dbCmd.ExecuteReader();
 if (reader.HasRows)
 {
@@ -55,7 +55,7 @@ if (reader.HasRows)
 }
 reader.Close();
 
-//¨ú±o³Ì«á¤@µ§¬ö¿ı
+//å–å¾—æœ€å¾Œä¸€ç­†ç´€éŒ„
 _dbCmd.CommandText = "SELECT  * FROM " + TABLE_FILE + " ORDER BY id DESC";
 SQLiteDataReader reader = _dbCmd.ExecuteReader();
 if (reader.HasRows)
@@ -70,7 +70,7 @@ if (reader.HasRows)
 }
 reader.Close();
 
-//«Ø¥ß¸ê®Æªí
+//å»ºç«‹è³‡æ–™è¡¨
 //Check table file exist?
 _dbCmd.CommandText = "SELECT name FROM sqlite_master WHERE type='table' AND name='" + TABLE_FILE + "'";
 dataReader = _dbCmd.ExecuteReader();
@@ -85,7 +85,7 @@ else
  dataReader.Close();
 }
 
-//§PÂ_Äİ©Êªº¸ê®Æ«¬ºA
+//åˆ¤æ–·å±¬æ€§çš„è³‡æ–™å‹æ…‹
 if (reader.HasRows)
 {
     while (reader.Read())

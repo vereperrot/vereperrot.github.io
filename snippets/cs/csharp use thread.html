@@ -1,4 +1,4 @@
-<html>
+ï»¿<html>
 	<title>Vere Perrot Snippets</title>
 <head>
 <meta charset="UTF-8">
@@ -20,13 +20,13 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-	<h3>¨Ï¥ÎThread</h3>
+	<h3>ä½¿ç”¨Thread</h3>
 		<textarea rows="1" cols="1" value="" id="myInput" style="width: 5px;">
 	</textarea>
 
 <button onclick="copySnippet()">Copy text</button>
 <pre><code class="language-csharp">
-//±Ò°ÊThread
+//å•Ÿå‹•Thread
 Thread _runningThread =null;  
 public void StartMainThread()  
 {  
@@ -36,8 +36,8 @@ public void StartMainThread()
   {  
    _runningThread.Abort();  
   }  
-  _runningThread = new Thread(Go);     //¤]¥i¥H³o¼Ë¼g_runningThread = new Thread(new ThreadStart(Go)); 
-                _runningThread.IsBackground = true;  //³]©wthread¦b­I´º°õ¦æ
+  _runningThread = new Thread(Go);     //ä¹Ÿå¯ä»¥é€™æ¨£å¯«_runningThread = new Thread(new ThreadStart(Go)); 
+                _runningThread.IsBackground = true;  //è¨­å®šthreadåœ¨èƒŒæ™¯åŸ·è¡Œ
   _runningThread.Start();  
  }  
  catch (Exception Ex)  
@@ -45,7 +45,7 @@ public void StartMainThread()
   Console.WriteLine(Ex.Message);  
  }  
 }  
-//µ²§ôThread
+//çµæŸThread
 public void StopMainThread()  
 {  
  try  
@@ -63,7 +63,7 @@ public void StopMainThread()
   Console.WriteLine(Ex.Message);  
  }  
 }  
-//Thread¶Ç»¼¤@­Ó°Ñ¼Æ
+//Threadå‚³éä¸€å€‹åƒæ•¸
 Thread t = new Thread (new ParameterizedThreadStart (Go));  
 t.Start (true);  
   
@@ -72,13 +72,13 @@ static void Go (object upperCase)
  bool upper = (bool) upperCase;  
  Console.WriteLine (upper ? "HELLO!" : "hello!");  
 }  
-//Thread¶Ç»¼¦h­Ó°Ñ¼Æ
-//¤èªk¤@¡B¨Ï¥Î©e¬£
+//Threadå‚³éå¤šå€‹åƒæ•¸
+//æ–¹æ³•ä¸€ã€ä½¿ç”¨å§”æ´¾
 string words;  
 string link;  
 Thread _runningThread = new Thread(delegate() { Lookup(words, link); });  
 _runningThread.Start(); 
-//¤èªk¤@¡B¨Ï¥ÎÃş§O
+//æ–¹æ³•ä¸€ã€ä½¿ç”¨é¡åˆ¥
 public class cc  
 {  
  public int i;  
