@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.add body on load event to check block page or not
+1.fix  js path
