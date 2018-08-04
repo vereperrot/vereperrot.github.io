@@ -1,0 +1,137 @@
+<html>
+	<title>Vere Perrot Snippets</title>
+<head>
+<link href='css/prism.min.css' rel='stylesheet' type='text/css'/>
+<script src='js/jquery-3.3.1.slim.min.js'></script>
+<script src='js/prism.min.js'></script>
+<script src='js/prism-csharp.js'></script>
+<script src='js/snippet.js'></script>
+</head>
+<body>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Vere Perrot Portfolio -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2865072968912801"
+     data-ad-slot="6421778592"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	<h3>C#使用sqlite</h3>
+		<textarea rows="1" cols="1" value="" id="myInput" style="width: 5px;">
+	</textarea>
+
+<button onclick="copySnippet()">Copy text</button>
+<pre><code class="language-csharp">
+//插入user資料表，一筆email和名字的紀錄。
+_dbCmd.CommandText = "INSERT INTO user(email,name) VALUES ('email','name')";
+_dbCmd.ExecuteNonQuery();
+
+dbCmd.CommandText = "INSERT INTO user(email,name) VALUES ('dd@com','許秝維')";
+_dbCmd.ExecuteNonQuery();
+
+//更新user資料表，將名為bbn的名字都改為Codelicious
+_dbCmd.CommandText = "UPDATE user SET name = 'Codelicious' WHERE name = 'bbn'";
+_dbCmd.ExecuteNonQuery();  
+
+//刪除user資料表
+cmd.CommandText = "Drop Table user";
+cmd.ExecuteNonQuery();
+
+//在user資料表中，搜尋名為'許秝維'，且email為dd@com的紀錄
+_dbCmd.CommandText = "SELECT ID, name,email FROM user where name='許秝維' and email='dd@com'";
+SQLiteDataReader reader = _dbCmd.ExecuteReader();
+if (reader.HasRows)
+{
+ while (reader.Read())
+ {
+     Console.WriteLine("ID: " + reader.GetInt32(0));
+     Console.WriteLine("name: " + reader.GetString(1));
+     Console.WriteLine("email: " + reader.GetString(2));
+ }
+}
+reader.Close();
+
+//取得最後一筆紀錄
+_dbCmd.CommandText = "SELECT  * FROM " + TABLE_FILE + " ORDER BY id DESC";
+SQLiteDataReader reader = _dbCmd.ExecuteReader();
+if (reader.HasRows)
+{
+ while (reader.Read())
+ {
+     Console.WriteLine("ID: " + reader.GetInt32(0));
+     Console.WriteLine("name: " + reader.GetString(1));
+     Console.WriteLine("email: " + reader.GetString(2));
+     break;
+ }
+}
+reader.Close();
+
+//建立資料表
+//Check table file exist?
+_dbCmd.CommandText = "SELECT name FROM sqlite_master WHERE type='table' AND name='" + TABLE_FILE + "'";
+dataReader = _dbCmd.ExecuteReader();
+if (!dataReader.HasRows)
+{
+ dataReader.Close();
+ _dbCmd.CommandText = "Create Table " + TABLE_FILE + " (id INTEGER PRIMARY KEY ASC, name ,path,tags,comment)";
+ _dbCmd.ExecuteNonQuery();
+}
+else
+{
+ dataReader.Close();
+}
+
+//判斷屬性的資料型態
+if (reader.HasRows)
+{
+    while (reader.Read())
+    {
+ for(int i=0;i&lt;reader.FieldCount;i++)
+ {
+     if (reader.GetName(i).CompareTo(&quot;id&quot;) == 0)
+     {
+  if (reader.GetFieldType(i) == typeof(string))
+  {
+      dataResult[i]= reader.GetString(i);
+  }
+  else if (reader.GetFieldType(i) == typeof(Int64))
+  {
+      dataResult[i] = reader.GetInt64(i).ToString();
+  }
+  else if (reader.GetFieldType(i) == typeof(Int32))
+  {
+      dataResult[i] = reader.GetInt32(i).ToString();
+  }
+  else if (reader.GetFieldType(i) == typeof(Int16))
+  {
+      dataResult[i] = reader.GetInt16(i).ToString();
+  }
+  else if (reader.GetFieldType(i) == typeof(Boolean))
+  {
+      dataResult[i] = reader.GetBoolean(i).ToString();
+  }
+  else if (reader.GetFieldType(i) == typeof(Int64))
+  {
+      dataResult[i] = reader.getobj.GetInt64(i).ToString();
+  }
+  
+     }
+     
+ }
+ 
+ //Console.WriteLine(&quot;ID: &quot; + reader.get.GetInt32(0));
+ //Console.WriteLine(&quot;name: &quot; + reader.GetString(1));
+ //Console.WriteLine(&quot;email: &quot; + reader.GetString(2));
+    }
+}
+reader.Close();
+
+
+
+</code>  
+</pre>
+</body>
+</html>

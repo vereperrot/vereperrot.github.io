@@ -1,3 +1,3 @@
-PINYIN PRACTICE PROGRAM
-1.add progress bar to page practice_vowel,_c_combine,_combine,quote
-2.add quiz board to  page practice_vowel,_c_combine,_combine,quote
+SNIPPETS PROGRAM
+1.add snippets folder
+2.add c, c# snippets
