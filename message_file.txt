@@ -1,3 +1,2 @@
 SNIPPETS PROGRAM
-1.add snippets folder
-2.add c, c# snippets
+1.test adblock check

@@ -46,3 +46,32 @@ var link= li[i].querySelector("a");
         }
     }
 }
+
+function blockCheck() {
+    var x = document.getElementsByClassName("adsbygoogle");
+    if(x[0].style.height){
+//	alert("no block");
+	}else{
+//	alert("blocked");
+		document.body.innerHTML = document.body.innerHTML + 
+"		 <div id=\"id01\" class=\"w3-modal\" style=\"display:block\">"+
+"    <div class=\"w3-modal-content w3-card-4\">"+
+"      <header class=\"w3-container w3-yellow\"> "+
+"        <span onclick=\"document.getElementById('id01').style.display='none'\" "+
+"        class=\"w3-button w3-display-topright\">&times;</span>"+
+"        <h2>Vere Perrot Snippets</h2>"+
+"      </header>"+
+"      <div class=\"w3-container\">"+
+"        <p>Please pause adblock on this site.</p>"+
+"      </div>"+
+"      <footer class=\"w3-container w3-yellow\">"+
+"      <p>"+
+"        <a href=\"https://github.com/perrot\">Perrot Github</a>"+
+"        </p>"+
+"      </footer>"+
+"    </div>"+
+"  </div>";
+	}
+    //x[0].innerHTML = x[0].style.height;
+}
+blockCheck();
