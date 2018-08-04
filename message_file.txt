@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.file save as utf8 char
+1.add body on load event to check block page or not

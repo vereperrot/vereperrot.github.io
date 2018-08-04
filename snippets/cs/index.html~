@@ -6,7 +6,7 @@
 <script src='../js/snippet.js'></script>
 <head>
 </head>
-<body style="background: #EEE;" onload="bodyLoad()">
+<body style="background: #EEE;">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Vere Perrot Portfolio -->
 <ins class="adsbygoogle"
