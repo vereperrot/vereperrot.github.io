@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.fix  js path
+1.add vbscript section
