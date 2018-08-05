@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.add vbscript section
+1.add some c# thread snippets
