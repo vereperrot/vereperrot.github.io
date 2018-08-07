@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.add some c# thread snippets
+1.add c#,c snippets

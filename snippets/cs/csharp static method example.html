@@ -1,0 +1,41 @@
+﻿<html>
+	<title>Vere Perrot Snippets</title>
+<head>
+<meta charset="UTF-8">
+<link href='../css/prism.min.css' rel='stylesheet' type='text/css'/>
+<script src='../js/jquery-3.3.1.slim.min.js'></script>
+<script src='../js/prism.min.js'></script>
+<script src='../js/prism-csharp.js'></script>
+<script src='../js/snippet.js'></script>
+</head>
+<body onload="bodyLoad()">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Vere Perrot Portfolio -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2865072968912801"
+     data-ad-slot="6421778592"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	<h3>static 方法範例</h3>
+	<input  type="text" value="" id="myInput" style="width: 5px;">
+<button onclick="copySnippet()">Copy text</button>
+<pre><code class="language-csharp">
+//static在載入程式後，只會配置一次記憶體
+class SomeClass {
+    public int InstanceMethod() { return 1; }
+    public static int StaticMethod() { return 42; }
+}
+SomeClass instance = new SomeClass();
+instance.InstanceMethod();   //Fine
+instance.StaticMethod();     //Won't compile
+
+SomeClass.InstanceMethod();  //Won't compile
+SomeClass.StaticMethod();    //Fine
+</code>  
+</pre>
+</body>
+</html>
