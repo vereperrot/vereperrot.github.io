@@ -10,9 +10,51 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	<title>谷歌拼音輸入法練習簿</title>
+<script>
+function bodyLoad(){
+	blockCheck();
+}
+
+function blockCheck() {
+    var x = document.getElementsByClassName("adsbygoogle");
+      if(x[0].style.height){
+	}else{
+		showBlockPage();
+	}
+}
+function showBlockPage(){
+		document.body.innerHTML = document.body.innerHTML + 
+"		 <div id=\"id01\" class=\"w3-modal\" style=\"display:block\">"+
+"    <div class=\"w3-modal-content w3-card-4\">"+
+"      <header class=\"w3-container w3-light-grey\"> "+
+
+"        <h2>Vere Perrot Snippets</h2>"+
+"      </header>"+
+"      <div class=\"w3-container\">"+
+"        <p>Please pause adblock on this site.</p>"+
+"      </div>"+
+"      <footer class=\"w3-container w3-light-grey\">"+
+"      <p>"+
+"        <a href=\"https://github.com/perrot\">Perrot Github</a>"+
+"        </p>"+
+"      </footer>"+
+"    </div>"+
+"  </div>";
+</script>
 </head>
 
-<body>
+<body onload="bodyLoad()">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Vere Perrot Portfolio -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2865072968912801"
+     data-ad-slot="6421778592"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <div ng-app="myApp" ng-controller="personCtrl" style="padding-top: 20px;">
 <div class="container">

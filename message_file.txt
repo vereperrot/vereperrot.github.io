@@ -1,3 +1,2 @@
-SNIPPETS PROGRAM
-1.modify syntax highlighter tag
-2.add readme.txt
+google_pinyin_input_method_exercise_book PROGRAM
+1.add google ads to PINYIN pages
