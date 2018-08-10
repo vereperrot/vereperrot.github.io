@@ -1,2 +1,2 @@
-google_pinyin_input_method_exercise_book PROGRAM
-1.add google ads to PINYIN pages
+SNIPPETS PROGRAM
+1.add SOME c# snippets
