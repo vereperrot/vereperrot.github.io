@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.add SOME c# snippets
+1.add SOME android snippets
