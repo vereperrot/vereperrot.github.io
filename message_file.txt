@@ -1,2 +1,2 @@
 SNIPPETS PROGRAM
-1.add SOME android snippets
+1.add  python snippets section
