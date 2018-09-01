@@ -1,4 +1,0 @@
-var consonant=["£t","£u","£v","£w","£x","£y","£z","£{","£|","£}","£~","£¡","£¢","££","£¤","£¥","£¦","£§","£¨","£©","£ª"];
-    var consonantAns=["b","p","m","f","d","t","n","l","g","k","h","j","q","x","zh","ch","sh","r","z","c","s"];
-var data=consonant;
-var ans=consonantAns;

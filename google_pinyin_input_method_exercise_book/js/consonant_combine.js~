@@ -1,4 +1,0 @@
-﻿var combine=["一","ㄧㄚ","ㄧㄛ","ㄧㄝ","ㄧㄠ","ㄧㄡ","ㄧㄢ","ㄧㄣ","ㄧㄤ","ㄧㄥ"];
-    var combineAns=["i","ia","io","ie","iao","iu","ian","in","iang","ing"];
-var _data=combine;
-var _ans=combineAns;
