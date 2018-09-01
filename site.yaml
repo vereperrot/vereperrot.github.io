@@ -63,4 +63,4 @@ publisher:
     github:
         type: hyde.ext.publishers.dvcs.Git
         path: ..\perrot.github.io
-        url: git@github.com:perrot/perrot.github.com.git
+        url: git@github.com:perrot/perrot.github.io.git
