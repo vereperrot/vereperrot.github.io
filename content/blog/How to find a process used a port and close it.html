@@ -1,0 +1,39 @@
+---
+title: How to find a process used a port and close it
+description: >
+    none
+created: !!timestamp '2011-01-01 10:00:00'
+tags:
+    - windows
+---
+
+{% mark image -%}
+
+![task-manager-details]([[!!images/task-manager-details.png]])
+
+{%- endmark %}
+
+{% mark excerpt -%}
+
+
+{%- endmark %}
+
+## Finding a process used a port
+Open the cmd console and type the following command to find all used port on Windows 10:
+```
+netstat -a -b
+```
+You will find something like this:
+```
+ TCP    0.0.0.0:8080           DESKTOP-PERROT:0      LISTENING
+ [ApplicationWebServer.exe]
+```
+Remember the process name ** ApplicationWebServer.exe **. We will find it in the task manager.
+## Close the process
+1. Open task manager.
+2. Find the process ** ApplicationWebServer.exe ** in the details tab.
+3. Select the process and click ** End Task ** menu item in the right click context menu.
+
+[My Man Jeeves by PG Wodehouse][MMJ]
+
+[MMJ]: http://www.gutenberg.org/cache/epub/8164/pg8164.html

@@ -1,5 +1,22 @@
 !!python/unicode 'about.html': [!!python/unicode 'macros.j2', !!python/unicode 'base.j2',
   !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\A tomato-clock will improve your life.html': [!!python/unicode 'blog.j2',
+  !!python/unicode 'macros.j2', !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\Deploying WordPress to OpenShift on Windows 10.html': [!!python/unicode 'blog.j2',
+  !!python/unicode 'macros.j2', !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\How to find a process used a port and close it.html': [!!python/unicode 'blog.j2',
+  !!python/unicode 'macros.j2', !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\How to install Python 2.7.15 and 3.6.5 on Windows 10.html': [
+  !!python/unicode 'blog.j2', !!python/unicode 'macros.j2', !!python/unicode 'base.j2',
+  !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\Markdown Cheat sheet.html': [!!python/unicode 'blog.j2', !!python/unicode 'macros.j2',
+  !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\Move your hyde web site to another computer.html': [!!python/unicode 'blog.j2',
+  !!python/unicode 'macros.j2', !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\Use hyde to create static HTML website.html': [!!python/unicode 'blog.j2',
+  !!python/unicode 'macros.j2', !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\angry-post - Copy.html': [!!python/unicode 'blog.j2', !!python/unicode 'macros.j2',
+  !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
 !!python/unicode 'blog\angry-post.html': [!!python/unicode 'blog.j2', !!python/unicode 'macros.j2',
   !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
 !!python/unicode 'blog\atom.xml': [!!python/unicode 'atom.j2', !!python/unicode 'macros.j2']
@@ -18,6 +35,10 @@
   !!python/unicode 'tagged_posts.j2', !!python/unicode 'analytics.j2']
 !!python/unicode 'blog\tags\thoughts.html': [!!python/unicode 'macros.j2', !!python/unicode 'base.j2',
   !!python/unicode 'tagged_posts.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\template.html': [!!python/unicode 'blog.j2', !!python/unicode 'macros.j2',
+  !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
+!!python/unicode 'blog\what.html': [!!python/unicode 'blog.j2', !!python/unicode 'macros.j2',
+  !!python/unicode 'base.j2', !!python/unicode 'analytics.j2']
 !!python/unicode 'index.html': [!!python/unicode 'macros.j2', !!python/unicode 'base.j2',
   !!python/unicode 'analytics.j2']
 !!python/unicode 'media\css\site.css': []
