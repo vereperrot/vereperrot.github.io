@@ -16,4 +16,6 @@ Edit the file your_site\_config.yml. This file contains all settings. I can modi
 ```
 title: My awesome title
 email: myawesome@mail.com
+twitter_username: myawesome
+github_username:  myawesome
 ```
