@@ -30,3 +30,21 @@ Because JekyII command version is higher then a Gemfile in the location. You nee
 ```
 bundle exec jekyll serve
 ```
+
+# How to display categories in JekyII site
+1. Add following lines to **_layout/post.html**.
+```
+Tagged with 
+{% for category in page.categories %}
+  <a href="/{{ category | slugize }}/">
+    {{ category }}
+  </a> 
+{% endfor %}
+```
+
+# How to display all categories in JekyII site
+```
+{% for category in site.categories %}
+    <li><a href="{{category.url}}"><strong>{{category|first}}</strong></a></li>
+{% endfor %}
+```

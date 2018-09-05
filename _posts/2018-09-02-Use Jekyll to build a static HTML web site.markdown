@@ -65,3 +65,4 @@ bundle install
 ## Reference
 * [Run Jekyll on Windows](http://jekyll-windows.juthilo.com)
 * [Jekyll Command Line Usage](https://jekyllrb.com/docs/usage/)
+* [Jinja Template Designer Documentation](http://jinja.pocoo.org/docs/2.10/templates/)

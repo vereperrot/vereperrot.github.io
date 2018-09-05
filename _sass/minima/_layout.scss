@@ -5,6 +5,7 @@
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+  /*background-color:#424242;*/
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -17,6 +18,7 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
+  /*color:white !important;*/
 
   &,
   &:visited {
@@ -37,6 +39,7 @@
   }
 
   .page-link {
+  /*color:white;*/
     color: $text-color;
     line-height: $base-line-height;
 

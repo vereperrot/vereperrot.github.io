@@ -1,4 +1,4 @@
-1. Rename site title
-2. 2018-09-05-Compose JekyII web site on another computer
-3. 2018-09-05-Use Python Flask to build a login site on Windows 10
-4. 2018-09-02-JekyII Common Question
+1. Add Python restful post
+2. Add page link to header
+3. Add post about a page link added to header
+4. Add art and projects pages.

@@ -24,4 +24,11 @@ layout: default
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+Tagged with 
+{% for category in page.categories %}
+  <a href="/{{ category | slugize }}/">
+    {{ category }}
+  </a> 
+{% endfor %}
 </article>
