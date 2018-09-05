@@ -1,1 +1,1 @@
-jekyll serve -w
+bundle exec jekyll serve
