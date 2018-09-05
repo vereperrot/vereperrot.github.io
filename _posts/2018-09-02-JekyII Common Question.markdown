@@ -48,3 +48,6 @@ Tagged with
     <li><a href="{{category.url}}"><strong>{{category|first}}</strong></a></li>
 {% endfor %}
 ```
+
+# Can I run HTML/JS in a markdown file
+Jekyll just parse Markdown files to HTML files. You can run HTML/JS in a markdown file. Reference [stackoverflow run-javascript-jquery-in-markdown](https://stackoverflow.com/questions/43461210/run-javascript-jquery-in-markdown).
