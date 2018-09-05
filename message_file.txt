@@ -1,3 +1,4 @@
-1. Change the blog name
-2. Change Github user name
-3. Change Twitter user name
+1. Rename site title
+2. 2018-09-05-Compose JekyII web site on another computer
+3. 2018-09-05-Use Python Flask to build a login site on Windows 10
+4. 2018-09-02-JekyII Common Question

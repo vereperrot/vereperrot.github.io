@@ -19,3 +19,14 @@ email: myawesome@mail.com
 twitter_username: myawesome
 github_username:  myawesome
 ```
+
+# You have already activated X, but your Gemfile requires Y
+I got an error after I started Jekyll service.
+```
+user_name.github.io>jekyll serve -w 
+ You have already activated public_suffix 3.0.3, but your Gemfile requires public_suffix 2.0.5. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)
+```
+Because JekyII command version is higher then a Gemfile in the location. You need  to prepend JekyII command with bundle exec.
+```
+bundle exec jekyll serve
+```
