@@ -1,1 +1,1 @@
-1. replace jekyII command with bundle exec jekyII
+1. add "2018-09-05-Practice basic English conversation phrases 500"
