@@ -33,6 +33,9 @@
 				{% if my_page.title == 'Art' %}
 					{%- assign icon = "paint-brush" -%}
 				{%- endif -%}
+				{% if my_page.title == 'Tags' %}
+					{%- assign icon = "tags" -%}
+				{%- endif -%}
 			<a class="page-link" href="{{ my_page.url | relative_url }}"><i class="fa fa-{{icon}}" style="   padding-right: 8px;"></i>{{ my_page.title | escape }}</a>
 				
             {%- endif -%}
