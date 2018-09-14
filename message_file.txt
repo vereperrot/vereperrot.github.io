@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-1. 2018-09-13-Simple ajax example for Flask
-2. 2018-09-13-Exercise Squats
-3. 2018-09-13-Do some exercise
-=======
-1.Fix the image link of project "¨¦ºq«÷­µ¿é¤Jªk½m²ßÃ¯ " .
->>>>>>> 792f1cca1993d6492f94e39166bd7164b8b1746d
+1. add some posts
