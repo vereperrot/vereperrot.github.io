@@ -4,6 +4,88 @@ title:  "d3 js simple example"
 date:   2018-09-14 00:01:57 +0800
 categories: d3js javascript
 ---
+## 1.Change the color of header text
+```html
+<h3>Today is a beautiful day!!</h3>
+<script>
+    d3.select('h3').style('color', 'darkblue');
+    d3.select('h3').style('font-size', '24px');
+</script>
+```
+![d3-change-header-color](/assets/d3-change-header-color.PNG)
+
+## 2.fill in some items into an unorder list 
+```html
+<ul> </ul>
+<script>
+    var fruits = ['apple', 'mango', 'banana', 'orange'];
+    d3.select('ul')
+        .selectAll('li')
+        .data(fruits)
+        .enter()
+        .append('li')
+        .text(function(d) { return d; });
+</script>
+```
+![d3-fill-item-into-list](/assets/d3-fill-item-into-list.PNG)
+
+## 3.draw a green rectangle 
+```html
+<svg>
+</svg>
+<script>
+//Select SVG element
+var svg = d3.select('svg');
+//Create rectangle element inside SVG
+svg.append('rect')
+   .attr('x', 50)
+   .attr('y', 50)
+   .attr('width', 200)
+   .attr('height', 100)
+   //.attr('fill', 'green');
+   .attr('style', 'fill:green;stroke-width:3;stroke:rgb(0,0,0)');
+</script>
+```
+![d3-draw-rectangle](/assets/d3-draw-rectangle.PNG)
+
+
+## 4.draw a bar chart
+```html
+<svg id="barChart" width='200' height='500'></svg>
+<script>
+var data = [80, 120, 60, 150, 200];
+var barHeight = 20;
+var bar = d3.select('svg#barChart')
+          .selectAll('rect')
+          .data(data)
+          .enter()
+          .append('rect')
+          .attr('width', function(d) {  return d; })
+          .attr('height', barHeight - 1)
+          .attr('transform', function(d, i) {
+            return "translate(0," + i * barHeight + ")";
+          });
+</script>
+```
+![d3-draw-bar-chart](/assets/d3-draw-bar-chart.PNG)
+
+
+## 5.click button to append text 
+```html
+<button id="btn">test</button>
+<script>
+d3.select('#btn')
+        .on('click', function () {
+            d3.select('body')
+               .append('h3')
+               .text('Today is a beautiful day!!');
+        });
+</script>
+```
+![d3-click-button-append-text](/assets/d3-click-button-append-text.PNG)
+
+
+## Full code
 ```html
 <html>
 <head>

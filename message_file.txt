@@ -1,3 +1,2 @@
-[-] remove 2018-09-14-list of dictionary in jinja2.md
-[-] remove 2018-09-14-Rendering a python dict in jinja2.md
-[+] 2018-09-18-Project Interval Alarm.md
+[+] add images to 2018-09-14-d3 js simple example.md
+[+] 2018-09-18-Create a responsive design svg bar chart.md
