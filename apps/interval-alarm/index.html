@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-btn {width:100% !important;    font-size: x-large;}
+button{width:100% !important;    font-size: x-large;}
+.w3-container{padding-right: 0px;
+    padding-left: 0px;}
+.w3-panel{    margin-top: 0px;}
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<body>
+	<audio id="myAudio">
+  <source src="alarm.ogg" type="audio/ogg">
+  <source src="alarm.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<div class="w3-container w3-allerta">
+<div class="w3-panel w3-black" style="    font-size: xx-large;">
+  Interval Alarm
+</div>
+  <p><button id="btnStart"class="w3-button w3-black w3-round-xxlarge" onclick="startTimer()">Start</button></p>
+  <p><button id="btnStop"class="w3-button w3-black w3-round-xxlarge  w3-disabled" onclick="stopTimer()">Stop</button></p>
+
+<p style="    margin-top: 0px;">
+  <label style="    font-size: x-large;">Seconds</label>
+<input id="inputSeconds"class="w3-input w3-border w3-round-xxlarge" placeholder="Seconds"value="3"name="last" type="text" style="    font-size: x-large;">
+</p>
+
+</div>
+<script>
+var myVar;
+
+function startTimer() {
+    var start=document.getElementById("btnStart");
+    var stop=document.getElementById("btnStop");
+    var inputSeconds=document.getElementById("inputSeconds");
+    enableButton(stop,start);
+    myVar = setInterval(alertFunc, inputSeconds.value*1000);
+}
+function enableButton(enableBtn, disableBtn){
+    disableBtn.setAttribute("class","w3-button w3-black w3-round-xxlarge w3-disabled");
+    enableBtn.setAttribute("class","w3-button w3-black w3-round-xxlarge");
+}
+function stopTimer() {
+var start=document.getElementById("btnStart");
+    var stop=document.getElementById("btnStop");
+enableButton(start,stop);
+   clearInterval(myVar);
+}
+function alertFunc() {
+  //alert("Hello!");
+	var x = document.getElementById("myAudio"); 
+	x.play(); 
+}
+</script>
+
+</body>
+</html>
+
