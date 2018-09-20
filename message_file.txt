@@ -1,2 +1,3 @@
-[+] add images to 2018-09-14-d3 js simple example.md
-[+] 2018-09-18-Create a responsive design svg bar chart.md
+[+] 2018-09-20-neural network short guide.md
+[+] 2018-09-20-w3css_show_hide_nested_list.md
+[+] 2018-09-20-Computer vision.md
