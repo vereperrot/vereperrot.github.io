@@ -11,5 +11,25 @@ categories: python windows
 2. [Download Python 3.6.5](https://www.python.org/downloads/). Install it with the default settings.
 3. Change the executable file name **C:\Python3\python.exe** to **C:\Python3\python3.exe**.
 
+## Install modules
+* Python3
+```
+python3 -m pip install pandas
+```
+* Python2
+```
+python -m pip install pandas
+```
+
+## Execute program
+* Python3
+```
+python3 test.py
+```
+* Python2
+```
+python test.py
+```
+
 ## Reference
 [How to install Python 2.7 and 3.6 to Windows 10](https://datascience.com.co/how-to-install-python-2-7-and-3-6-in-windows-10-add-python-path-281e7eae62a)
