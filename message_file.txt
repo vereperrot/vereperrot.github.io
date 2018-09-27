@@ -1,1 +1,3 @@
-[+] some computer vision posts
+[+] apps interval-alarm can save **IntervalSeconds** setting.
+[+] apps interval-alarm can enable interval-alarm.
+[+] add some data science posts

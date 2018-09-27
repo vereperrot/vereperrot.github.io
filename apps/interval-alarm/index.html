@@ -28,35 +28,103 @@ button{width:100% !important;    font-size: x-large;}
 
 <p style="    margin-top: 0px;">
   <label style="    font-size: x-large;">Seconds</label>
-<input id="inputSeconds"class="w3-input w3-border w3-round-xxlarge" placeholder="Seconds"value="3"name="last" type="text" style="    font-size: x-large;">
+<input id="inputSeconds"class="w3-input w3-border w3-round-xxlarge w3-show" placeholder="Seconds"value="3"name="last" type="text" style="    font-size: x-large;">
+<input id="countSeconds"class="w3-input w3-border w3-round-xxlarge w3-hide" placeholder="Seconds"value=""name="last" type="text" style="    font-size: x-large;" disabled>
 </p>
+<div>
+<input class="w3-check" type="checkbox" id="enableIntervalAlarm" onclick="enableIntervalAlarm()">
+<label style="    font-size: x-large;">Enable Interval Alarm</label>
+</div>
+
 
 </div>
 <script>
 var myVar;
+const INTERVAL_SECONDS = "IntervalSeconds";
+const ENABLE_INTERVAL_ALARM="EnableIntervalAlarm";
+var seconds;
 
 function startTimer() {
     var start=document.getElementById("btnStart");
     var stop=document.getElementById("btnStop");
     var inputSeconds=document.getElementById("inputSeconds");
+	var enableIntervalAlarm=document.getElementById("enableIntervalAlarm");
+	
     enableButton(stop,start);
-    myVar = setInterval(alertFunc, inputSeconds.value*1000);
+	if(enableIntervalAlarm.checked){
+		localStorage.setItem(INTERVAL_SECONDS, inputSeconds.value);
+		myVar = setInterval(alertFunc, inputSeconds.value*1000);
+	}else{
+		seconds=0;
+		
+		myVar = setInterval(timeout, 1*1000);
+	}
 }
 function enableButton(enableBtn, disableBtn){
     disableBtn.setAttribute("class","w3-button w3-black w3-round-xxlarge w3-disabled");
     enableBtn.setAttribute("class","w3-button w3-black w3-round-xxlarge");
 }
 function stopTimer() {
-var start=document.getElementById("btnStart");
+	var start=document.getElementById("btnStart");
     var stop=document.getElementById("btnStop");
-enableButton(start,stop);
+	
+	enableButton(start,stop);
    clearInterval(myVar);
+}
+function enableIntervalAlarm(){
+	var enableIntervalAlarm=document.getElementById("enableIntervalAlarm");
+	displayCountSeconds(!enableIntervalAlarm.checked);
+	localStorage.setItem(ENABLE_INTERVAL_ALARM, enableIntervalAlarm.checked);
+	console.log(localStorage.getItem(ENABLE_INTERVAL_ALARM));
+}
+function timeout() {
+	seconds++;
+	var countSeconds=document.getElementById("countSeconds");
+	countSeconds.value=seconds;
 }
 function alertFunc() {
   //alert("Hello!");
 	var x = document.getElementById("myAudio"); 
 	x.play(); 
 }
+function displayCountSeconds(show) {
+	var i = document.getElementById("inputSeconds");
+	var c = document.getElementById("countSeconds");
+	if(show){
+	i.className = i.className.replace(" w3-show", " w3-hide");
+	c.className = c.className.replace(" w3-hide", " w3-show");
+	}else{
+	i.className = i.className.replace(" w3-hide", " w3-show");
+	c.className = c.className.replace(" w3-show", " w3-hide");
+	}
+}
+function initial(){
+    var inputSeconds=document.getElementById("inputSeconds");
+	var enableIntervalAlarm=document.getElementById("enableIntervalAlarm");
+	var tmp=null;
+	
+	inputSeconds.value=localStorage.getItem(INTERVAL_SECONDS);
+	if(inputSeconds.value.length==0){
+		inputSeconds.value=30;
+		localStorage.setItem(INTERVAL_SECONDS, inputSeconds.value);
+	}
+	tmp=localStorage.getItem(ENABLE_INTERVAL_ALARM);
+	console.log(tmp);
+	if(tmp!=null){
+		if (tmp==false)
+		enableIntervalAlarm.removeAttribute('checked');
+		else
+		enableIntervalAlarm.setAttribute('checked', 'checked');;
+		console.log("1"+enableIntervalAlarm.checked);
+		}
+	else{
+		enableIntervalAlarm.checked=true;
+		console.log("2");
+		}
+	
+	console.log(enableIntervalAlarm.checked);
+}
+initial();
 </script>
 
 </body>
