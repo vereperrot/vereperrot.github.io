@@ -1,3 +1,4 @@
-[+] apps interval-alarm can save **IntervalSeconds** setting.
-[+] apps interval-alarm can enable interval-alarm.
-[+] add some data science posts
+[+] [app interval-alarm] Add enable sound checkbox. When I check the sound checkbox, it will sound every interval.
+[+] [app interval-alarm] Add icon to button
+[+] [app interval-alarm] Add timer text to title bar
+[+] [app interval-alarm] When the user clicks the stop button, the timer stopped and flashes the timer text.
