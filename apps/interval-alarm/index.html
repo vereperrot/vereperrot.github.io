@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .w3-btn {width:100% !important;    font-size: x-large;}
 button{width:100% !important;    font-size: x-large;}
@@ -19,12 +20,16 @@ button{width:100% !important;    font-size: x-large;}
   <source src="alarm.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
 <div class="w3-container w3-allerta">
-<div class="w3-panel w3-black" style="    font-size: xx-large;">
-  Interval Alarm
+<div class="w3-panel w3-black" style="    font-size: xx-large;" id="title">
+  
 </div>
-  <p><button id="btnStart"class="w3-button w3-black w3-round-xxlarge" onclick="startTimer()">Start</button></p>
-  <p><button id="btnStop"class="w3-button w3-black w3-round-xxlarge  w3-disabled" onclick="stopTimer()">Stop</button></p>
+  <div style="margin-left: 15px;
+    margin-right: 15px;">
+	<button id="btnStart"class="w3-button w3-black w3-round-xxlarge" onclick="startTimer()" style="margin-bottom:15px"><i class="fa fa-play"></i>  Start</button>
+  <button id="btnStop"class="w3-button w3-black w3-round-xxlarge  w3-disabled" onclick="stopTimer()"style="margin-bottom:15px"><i class="fa fa-stop"></i>  Stop</button>
+  
 
 <p style="    margin-top: 0px;">
   <label style="    font-size: x-large;">Seconds</label>
@@ -32,33 +37,32 @@ button{width:100% !important;    font-size: x-large;}
 <input id="countSeconds"class="w3-input w3-border w3-round-xxlarge w3-hide" placeholder="Seconds"value=""name="last" type="text" style="    font-size: x-large;" disabled>
 </p>
 <div>
-<input class="w3-check" type="checkbox" id="enableIntervalAlarm" onclick="enableIntervalAlarm()">
-<label style="    font-size: x-large;">Enable Interval Alarm</label>
+<input class="w3-check" type="checkbox" id="enableSound" onclick="enableSound()">
+<label style="    font-size: x-large;">Enable Sound</label>
 </div>
-
+</div>
 
 </div>
 <script>
-var myVar;
+var _mainTimer;
+var _flashTimer;
 const INTERVAL_SECONDS = "IntervalSeconds";
-const ENABLE_INTERVAL_ALARM="EnableIntervalAlarm";
-var seconds;
+const ENABLE_SOUND="EnableSound";
+const TITLE_TEXT="Interval Alarm";
+var _totalSeconds=0;
+var _flashMessage="";
 
 function startTimer() {
     var start=document.getElementById("btnStart");
     var stop=document.getElementById("btnStop");
     var inputSeconds=document.getElementById("inputSeconds");
-	var enableIntervalAlarm=document.getElementById("enableIntervalAlarm");
 	
     enableButton(stop,start);
-	if(enableIntervalAlarm.checked){
-		localStorage.setItem(INTERVAL_SECONDS, inputSeconds.value);
-		myVar = setInterval(alertFunc, inputSeconds.value*1000);
-	}else{
-		seconds=0;
-		
-		myVar = setInterval(timeout, 1*1000);
-	}
+	clearInterval(_flashTimer);
+	localStorage.setItem(INTERVAL_SECONDS, inputSeconds.value);
+	_totalSeconds=0;
+	changeTitle(TITLE_TEXT+" - "+_totalSeconds.toString().toHHMMSS());
+	_mainTimer = setInterval(alertFunc, inputSeconds.value*1000);
 }
 function enableButton(enableBtn, disableBtn){
     disableBtn.setAttribute("class","w3-button w3-black w3-round-xxlarge w3-disabled");
@@ -69,60 +73,84 @@ function stopTimer() {
     var stop=document.getElementById("btnStop");
 	
 	enableButton(start,stop);
-   clearInterval(myVar);
+   clearInterval(_mainTimer);
+   
+   _flashMessage=document.getElementById("title").innerText;
+   _flashTimer = setInterval(flash, 500);
 }
-function enableIntervalAlarm(){
-	var enableIntervalAlarm=document.getElementById("enableIntervalAlarm");
-	displayCountSeconds(!enableIntervalAlarm.checked);
-	localStorage.setItem(ENABLE_INTERVAL_ALARM, enableIntervalAlarm.checked);
-	console.log(localStorage.getItem(ENABLE_INTERVAL_ALARM));
+function flash(){
+
+	var title=document.getElementById("title");
+	//console.log(","+title.innerText+",");
+	if(title.innerText==TITLE_TEXT+" - "||title.innerText==TITLE_TEXT+" -"){
+	title.innerText=_flashMessage;
+		
+		}
+	else{
+	title.innerText=TITLE_TEXT+" - ";
+		
+		}
 }
-function timeout() {
-	seconds++;
-	var countSeconds=document.getElementById("countSeconds");
-	countSeconds.value=seconds;
+function enableSound(){
+	var enableSound=document.getElementById("enableSound");
+	
+	localStorage.setItem(ENABLE_SOUND, enableSound.checked);
+	console.log(localStorage.getItem(ENABLE_SOUND));
 }
 function alertFunc() {
   //alert("Hello!");
+  var enableSound=document.getElementById("enableSound");
+  var inputSeconds=document.getElementById("inputSeconds");
+  
+  _totalSeconds+=parseInt(inputSeconds.value);
+  changeTitle(TITLE_TEXT+" - "+_totalSeconds.toString().toHHMMSS());
+  if(enableSound.checked){
 	var x = document.getElementById("myAudio"); 
 	x.play(); 
-}
-function displayCountSeconds(show) {
-	var i = document.getElementById("inputSeconds");
-	var c = document.getElementById("countSeconds");
-	if(show){
-	i.className = i.className.replace(" w3-show", " w3-hide");
-	c.className = c.className.replace(" w3-hide", " w3-show");
-	}else{
-	i.className = i.className.replace(" w3-hide", " w3-show");
-	c.className = c.className.replace(" w3-show", " w3-hide");
 	}
 }
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+}
+function changeTitle(text){
+	var title=document.getElementById("title");
+	title.innerText=text;
+}
+
 function initial(){
     var inputSeconds=document.getElementById("inputSeconds");
-	var enableIntervalAlarm=document.getElementById("enableIntervalAlarm");
+	var enableSound=document.getElementById("enableSound");
 	var tmp=null;
 	
+	changeTitle(TITLE_TEXT);
 	inputSeconds.value=localStorage.getItem(INTERVAL_SECONDS);
 	if(inputSeconds.value.length==0){
 		inputSeconds.value=30;
 		localStorage.setItem(INTERVAL_SECONDS, inputSeconds.value);
 	}
-	tmp=localStorage.getItem(ENABLE_INTERVAL_ALARM);
+	tmp=localStorage.getItem(ENABLE_SOUND);
 	console.log(tmp);
 	if(tmp!=null){
 		if (tmp==false)
-		enableIntervalAlarm.removeAttribute('checked');
+		enableSound.removeAttribute('checked');
 		else
-		enableIntervalAlarm.setAttribute('checked', 'checked');;
-		console.log("1"+enableIntervalAlarm.checked);
+		enableSound.setAttribute('checked', 'checked');;
+		console.log("1"+enableSound.checked);
 		}
 	else{
-		enableIntervalAlarm.checked=true;
+		enableSound.checked=true;
 		console.log("2");
 		}
 	
-	console.log(enableIntervalAlarm.checked);
+	console.log(enableSound.checked);
 }
 initial();
 </script>
