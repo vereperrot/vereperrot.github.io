@@ -11,3 +11,4 @@ categories: data-science r-programming
 * [Chapter 3 getting started with R](Chapter-3-getting-started-with-R.html)
 * [Chapter 4 follow the data](Chapter-4-follow-the-data.html)
 * [Chapter 5 rows and columns](Chapter-5-rows-and-columns.html)
+* [Chapter 6 Beer, Farms , and Peas](http://perrot.github.io/data-science/r-programming/2018/09/28/Chapter-6-Beer-Farms-and-Peas.html)
