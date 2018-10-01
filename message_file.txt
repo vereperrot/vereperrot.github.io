@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[+] 2018-09-28-Chapter 6 Beer Farms and Peas
-=======
-[+] [app interval-alarm] Add enable sound checkbox. When I check the sound checkbox, it will sound every interval.
-[+] [app interval-alarm] Add icon to button
-[+] [app interval-alarm] Add timer text to title bar
-[+] [app interval-alarm] When the user clicks the stop button, the timer stopped and flashes the timer text.
->>>>>>> f34d7f82ce93458469cf286037a8fbbc5a9eb374
+[+] Learning method
+[+] Machine Learning
+[+] 2018-10-01-Machine learning yearning note
+
