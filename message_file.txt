@@ -1,4 +1,3 @@
-[+] Learning method
-[+] Machine Learning
-[+] 2018-10-01-Machine learning yearning note
+[+] Dog money
+[+] 2018-10-02-Machine learning week 2
 
