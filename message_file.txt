@@ -1,3 +1,3 @@
-[+] Dog money
-[+] 2018-10-02-Machine learning week 2
-
+[+] Tangent slope calculation
+[+] Jupyter Notebook Tutorial
+[+] Gradient Descent
