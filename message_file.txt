@@ -1,3 +1,1 @@
-[+] Tangent slope calculation
-[+] Jupyter Notebook Tutorial
-[+] Gradient Descent
+[+] [apps] google_pinyin_input_method_exercise_book; add special word
