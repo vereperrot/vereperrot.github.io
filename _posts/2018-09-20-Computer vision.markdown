@@ -2,7 +2,7 @@
 layout: post
 title:  "Computer vision"
 date:   2018-09-20 00:01:57 +0800
-categories: CV python
+categories: CV python Computer-vision
 ---
 ## Environment
 * Windows 10
