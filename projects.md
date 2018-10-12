@@ -5,6 +5,7 @@ permalink: /projects/
 ---
 # Web APP List
 * [Interval Alarm]({{ site.baseurl }}{% link _posts/2018-09-18-Project Interval Alarm.markdown %})
+* [Deposit Calculator]({{ site.baseurl }}{% link _posts/2018-10-12-Project Deposit Calculator.markdown %})
 
 # HOW STRENGTH IS MY PASSWORD?
 ![howstrengthismyps](/assets/howstrengthismyps.png)

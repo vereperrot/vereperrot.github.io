@@ -1,1 +1,2 @@
-[+] Add internal alarm to projects page
+[+] Add deposit-calculator to projects page
+[+] Add deposit-calculator project
