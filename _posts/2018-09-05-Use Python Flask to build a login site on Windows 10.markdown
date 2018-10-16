@@ -4,6 +4,10 @@ title:  "Use Python Flask to build a login site on Windows 10"
 date:   2018-09-05 00:01:57 +0800
 categories: flask python
 ---
+## Environment
+* Python 3
+* Windows 10
+
 ## Steps
 1. clone the repository
 ```

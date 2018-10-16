@@ -1,2 +1,2 @@
-[+] Add deposit-calculator to projects page
-[+] Add deposit-calculator project
+[+] Add environment section to "Use Python Flask to build a login site on Windows 10.md"
+[+] Deploy your flask application.md
