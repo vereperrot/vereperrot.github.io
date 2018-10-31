@@ -35,6 +35,8 @@ loadDoc('/parking', myFunction);
 				</script>
 </body>
 </html>
+```
+
 2. Edit the server file.
 ```python
 @bp.route('/parking')

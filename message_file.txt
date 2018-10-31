@@ -1,2 +1,1 @@
-[+] Add environment section to "Use Python Flask to build a login site on Windows 10.md"
-[+] Deploy your flask application.md
+[+] Add "Make a Python Flask script standalone executable.md"
