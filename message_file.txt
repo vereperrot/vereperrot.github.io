@@ -1,1 +1,1 @@
-[+] Add "Make a Python Flask script standalone executable.md"
+[+] Add "Create flask app installer using pyinstaller.md"
