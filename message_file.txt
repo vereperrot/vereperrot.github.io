@@ -1,1 +1,1 @@
-[+] Add "Create flask app installer using pyinstaller.md"
+[+] Add "Create BeeGo web application.md"
