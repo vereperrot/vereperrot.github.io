@@ -1,1 +1,1 @@
-[+] Add "Create BeeGo web application.md"
+[+] Modify support HTTPS section in "Create BeeGo web application.md"

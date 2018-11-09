@@ -21,19 +21,15 @@ D:\Go_workspace> go get github.com/astaxie/beego
 4. Edit hello.go
 ```go
 package main
-
 import (
     "github.com/astaxie/beego"
 )
-
 type MainController struct {
     beego.Controller
 }
-
 func (this *MainController) Get() {
     this.Ctx.WriteString("hello world")
 }
-
 func main() {
     beego.Router("/", &MainController{})
     beego.Run()
@@ -44,7 +40,7 @@ func main() {
 D:\Go_workspace> go build hello.go
 D:\Go_workspace> hello.exe
 ```
-6. Go to http://127.0.0.1:8080 in the browser.
+6. Go to **http://127.0.0.1:8080** in the browser.
 7. Get bee tool. Update it use the command **go get -u github.com/beego/bee**
 ```
 D:\Go_workspace> go get github.com/beego/bee
@@ -58,7 +54,7 @@ D:\Go_workspace>cd src\myproject
 ```
 D:\Go_workspace\src\myproject>..\..\bin\bee run
 ```
-6. Go to http://127.0.0.1:8080 in the browser.
+6. Go to **http://127.0.0.1:8080** in the browser.
 ![welcome to beego](\assets\welcome to beego.PNG)
 7. Compress all project into a simgle file.
 ```
@@ -123,8 +119,32 @@ openssl rsa -in googleapis.key.old -out googleapis.key
 ```
 openssl x509 -req -days 3650 -in googleapis.csr -signkey googleapis.key -out googleapis.cer -extensions v3_req -extfile "C:\Program Files\OpenSSL-Win64\bin\cnf\openssl.cnf"
 ```
-11. Install googleapis.cer to system
-12. Copy googleapis.key and googleapis.cer to your web server
+11. Install googleapis.cer to system using default settings.
+12. Copy googleapis.key and googleapis.cer to the directory **D:\Go_workspace\src\myproject**
+12. Edit D:\Go_workspace\src\myproject\conf\app.conf
+```go
+appname = myproject
+runmode = prod
+[dev]
+httpaddr = "127.0.0.1"
+HTTPPort = 9100
+[prod]
+EnableHTTP = false
+HTTPSPort = 9099
+httpsaddr = "127.0.0.1"
+EnableHTTPS = true
+EnableHttpTLS = true
+HTTPSCertFile = "googleapis.cer"
+HTTPSKeyFile = "googleapis.key"  
+[test]
+HTTPSPort = 9099
+```
+13. Restart ```bee run```. If you receive the following messages, it means that you have to set EnableHTTP as false. **Only one of EnableHTTP and EnableHTTPS can be set to true**. [Reference this link](https://stackoverflow.com/questions/53219095/how-to-support-https-in-beego/53221085#53221085)
+```
+2018/11/09 10:07:56.251 [I] [asm_amd64.s:2361]  http server Running on http://127.0.0.1:8080
+2018/11/09 10:07:56.253 [I] [asm_amd64.s:2361]  https server Running on https://127.0.0.1:9099
+2018/11/09 10:07:56.293 [C] [asm_amd64.s:2361]  ListenAndServeTLS:  listen tcp 127.0.0.1:9099: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+```
 
 ## Error
 * When I execute the command **go get github.com/astaxie/beego**, I get following error message.
@@ -139,3 +159,4 @@ You have to set the correct variable GOROOT and GOPATH.
 * [Introduction to bee tool](https://beego.me/docs/install/bee.md)
 * [The architecture of Beego](https://beego.me/docs/intro/)
 * [BeeGo quick start](https://beego.me/quickstart)
+* [Get an SSL certificate for your domain](https://support.google.com/domains/answer/7630973?hl=en)
