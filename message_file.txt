@@ -1,1 +1,1 @@
-[+] Modify support HTTPS section in "Create BeeGo web application.md"
+[+] Append "Change GOPATH" section in "Create BeeGo web application.md"

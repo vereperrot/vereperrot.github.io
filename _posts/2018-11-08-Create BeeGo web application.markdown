@@ -155,6 +155,31 @@ package github.com/astaxie/beego: cannot download, $GOPATH must not be set to $G
 You have to set the correct variable GOROOT and GOPATH.
 ```
 
+## Change GOPATH
+If you want to move the project to another folder, you need to set the GOPATH variable.
+1. I want to move myproject to Google Drive.
+2. Make folder 
+```
+mkdir D:\Google Drive\Work\GoWorkspace
+```
+3. Go to **Advanced system settings**. Set the GOPATH variable as **D:\Google Drive\Work\GoWorkspace**. You can set  the GOPATH variable as multiple path. Like **path1;path2**.
+4. Make the source folder
+```
+mkdir D:\Google Drive\Work\GoWorkspace\src
+```
+5. Move myproject to src folder
+```
+move C:\myproject D:\Google Drive\Work\GoWorkspace\src
+```
+6. Install package to the new GOPATH. It will create a pkg folder in D:\Google Drive\Work\GoWorkspace.
+```
+go get github.com/astaxie/beego
+```
+7. Let's run beego
+```
+D:\Google Drive\Work\GoWorkspace\src\myproject>bee run
+```
+
 ## Reference
 * [Introduction to bee tool](https://beego.me/docs/install/bee.md)
 * [The architecture of Beego](https://beego.me/docs/intro/)
