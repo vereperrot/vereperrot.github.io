@@ -1,2 +1,1 @@
-[+] add lightbox css style to art.md.
-[+] post 2019-04-10-Fix terminal after displaying binary codes
+[+] modify about.md.
