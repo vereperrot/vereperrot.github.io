@@ -13,6 +13,7 @@ I'm a software engineer.
  - rice
  - draw
  - travel
+ - pizza
 
 **Fun facts:**
 
