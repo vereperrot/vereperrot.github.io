@@ -1,1 +1,2 @@
-[+] Store username and password to prevent Git asks me every time.md.
+[+] 2019-04-20-How to learn English listen and speak.md
+[+] 2019-04-20-jekyll invalid byte sequence in UTF-8 error.md
