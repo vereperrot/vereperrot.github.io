@@ -1,2 +1,2 @@
-[+] 2019-04-20-How to learn English listen and speak.md
-[+] 2019-04-20-jekyll invalid byte sequence in UTF-8 error.md
+[+]add horizontal rule to the projects.md file.
+[*]add section "why you need to write down?" and "Look up new word tips" into the 2019-04-20-How to learn English listen and speak.md file.

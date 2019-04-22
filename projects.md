@@ -9,17 +9,25 @@ I need a timer when I do a stretch exercise. A timer buildin my andoid clock app
 
 [<i class="fa fa-chain"></i> Try Interval Alarm](http://perrot.github.io/apps/interval-alarm)
 
+---
+
 # Deposit Calculator
 ![depositcalculator](/assets/deposit-calculator.JPG)
-I need a calculator when I calculate deposit.
+<br/>I need a calculator when I calculate deposit.
 
 [<i class="fa fa-chain"></i> Try Deposit Calculator](http://perrot.github.io/apps/deposit-calculator)
+
+
+---
 
 # HOW STRENGTH IS MY PASSWORD?
 ![howstrengthismyps](/assets/howstrengthismyps.png)
 A tool I can check my password is strength enough. And create three level strength password by clicking a button. If the password is strong, copy it by clicking a button.
 
 [<i class="fa fa-chain"></i> Try HOW STRENGTH IS MY PASSWORD?](http://perrot.github.io/apps/howstrengthismyps/index.html)
+
+
+---
 
 # 谷歌拼音輸入法練習簿 (Google Chinese pinyin input method practice notebook)
 ![pinyin-input-method](/assets/pinyin-input-method.PNG)
