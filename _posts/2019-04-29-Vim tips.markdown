@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "vim tips"
+date:   2019-04-29 00:01:57 +0800
+categories: vim
+---
+# Where is _vimrc
+## gVimPortable.exe
+If you start gvim with gVimPortable.exe, it will load the file XX\gVimPortable\Data\settings\_vimrc.
+
+## gvim.exe
+If you start gvim with gvim.exe, it will load the file C:\Users\XXUSER\_vimrc.
+
+# How to create a new file in commnad mode
+The file will create after you save it with **:w**. It will locate to the directory gVimPortable\ex.tcl. 
+```
+:e ex.tcl
+```
+
+# How to sort
+```
+:sort -n
+```
+
+# How to use template in gVimPortable
+1. Create you skeleton files to the directory XX\gVimPortable\Data\settings\templates\skeleton.txt.
+2. Add bellow lines to your vimrc file.
+```
+augroup templates
+  au!
+  " read in templates files
+  autocmd BufNewFile *.* silent! execute '0r ~\templates\skeleton.'.expand("<afile>:e")
+augroup END
+```
+3. When you create a new file using **:e xx.txt** in command mode, it will auto load the skeleton file via the file extension.
+
+## Reference
+[how-to-use-a-template-in-vim](https://stackoverflow.com/questions/3785320/how-to-use-a-template-in-vim)
+

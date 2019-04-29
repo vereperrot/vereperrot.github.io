@@ -1,2 +1,5 @@
-[+]add horizontal rule to the projects.md file.
-[*]add section "why you need to write down?" and "Look up new word tips" into the 2019-04-20-How to learn English listen and speak.md file.
+[+] 2019-04-29-How to return json string in Apache
+[+] 2019-04-29-Vim tips
+[+] 2019-04-29-Git Problem
+[+] 2019-04-29-How to solve remote desktop connection 'an internal error has occurred'
+[+] 2019-04-29-fuzzy string matching in python
