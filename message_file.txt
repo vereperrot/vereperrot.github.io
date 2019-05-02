@@ -1,5 +1,2 @@
-[+] 2019-04-29-How to return json string in Apache
-[+] 2019-04-29-Vim tips
-[+] 2019-04-29-Git Problem
-[+] 2019-04-29-How to solve remote desktop connection 'an internal error has occurred'
-[+] 2019-04-29-fuzzy string matching in python
+[+] 2019-04-29-python tips
+[+] 2019-04-29-How to use python selenium

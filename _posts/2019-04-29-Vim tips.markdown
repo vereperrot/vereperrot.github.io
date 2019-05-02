@@ -22,10 +22,25 @@ The file will create after you save it with **:w**. It will locate to the direct
 :sort -n
 ```
 
+# Save and run python script at the same time
+Add bellow lines to vimrc file. You need to add double quotes in Windows.
+```vim
+map <F5> <Esc>:w<CR>:!"%:p"<CR>
+```
+
+# How to change the temp directory
+Add bellow lines to vimrc file.
+```vim
+" store backup, undo, and swap files in temp directory
+set directory=~\tmp
+set backupdir=~\tmp
+set undodir=~\tmp
+```
+
 # How to use template in gVimPortable
 1. Create you skeleton files to the directory XX\gVimPortable\Data\settings\templates\skeleton.txt.
 2. Add bellow lines to your vimrc file.
-```
+```vim
 augroup templates
   au!
   " read in templates files

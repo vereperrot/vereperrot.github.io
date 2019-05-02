@@ -9,7 +9,8 @@ categories: apache json
 1. Add string **AddType application/json .json** to Apache configuation file **/etc/apache2/mods-available/mime.conf**.
 2. Enable mime module via **a2enmod mime**.
 3. PHP files don't add any **echo** html tags string.
-```
+
+```php
 <?php
 $myObj->name = "John";
 $myObj->age = 30;

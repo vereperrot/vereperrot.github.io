@@ -14,10 +14,10 @@ categories: python
 ```
 I have to install Microsoft Visual C++ 14.0 to my computer. 
 1. Type "Visual Studio Installer" in the windows search box and open it. My installer version is visaul studio 2017.
-2. Go to **Workloads| Desktop development with C++**. Selecting the option **VC++ 2015.3 v14.00 (v140) toolset for desktop** to install. It will need 4.59 GB space. If your drive doesn't have enough spaces, you need to move some unused folders to another drive. 
+2. Go to **Workloads`| Desktop development with C++**. Selecting the option **VC++ 2015.3 v14.00 (v140) toolset for desktop** to install. It will need 4.59 GB space. If your drive doesn't have enough spaces, you need to move some unused folders to another drive. 
 
 # Example
-```
+```python
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
