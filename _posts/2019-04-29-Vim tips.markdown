@@ -17,6 +17,26 @@ The file will create after you save it with **:w**. It will locate to the direct
 :e ex.tcl
 ```
 
+# Search for an exact word in command mode
+```
+/\<word\>
+```
+
+# Enable auto save function
+1. Download and extract the latest [vim-auto-save plugin](https://www.vim.org/scripts/script.php?script_id=4521).
+2. Copy vim-auto-save-x.x.x\plugin\* to your vim directory vim80\plugin.
+3. Copy vim-auto-save-x.x.x\doc\* to your vim directory vim80\doc.
+4. Append the content of file **vim-auto-save-x.x.x\doc\tags** to vim80\doc\tags.
+5. Place `'let g:auto_save = 1'` to your vimrc.
+6. Restart vim.
+
+# Previewing markdown files
+Add this to vimrc file. If you want to a live preview, you need to install [Markdown Preview Plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl) extension to Chrome. Then set **allow access to file URLs** option enabled in the extension's details page.
+```vim
+" Open markdown files with Chrome.
+autocmd BufEnter *.md,*.markdown exe 'noremap <F5> :!start "C:\Users\tomas\AppData\Local\Google\Chrome\Application\chrome.exe" "%:p"<CR>'
+```
+
 # How to sort
 ```
 :sort -n
