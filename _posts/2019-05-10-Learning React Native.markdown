@@ -161,6 +161,7 @@ export default class BlinkApp extends Component {
 # Reference
 * [React Native · A framework for building native apps using React](https://facebook.github.io/react-native/)
 * [What is React?](https://www.w3schools.com/whatis/whatis_react.asp)
+* [Online React Native IDE](https://snack.expo.io/)
 
 # Project Ideas
 * [6 Fun React Projects You Can Build Today](https://daveceddia.com/react-practice-projects/)

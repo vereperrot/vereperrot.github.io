@@ -4,6 +4,14 @@ title:  "python tips"
 date:   2019-04-29 00:01:57 +0800
 categories: python
 ---
+
+# How to generate a executable file
+1. ```python -m pip install pyinstaller```
+2. ```pyinstaller -F .\hello.py -i search.ico -c --onedir --onefile --clean --noupx```
+3. It will generate an executable file in dist folder. If the executable file needs some config files for executing. You have to copy them to the dist folder.
+4. If I add -w option, pyinstaller generates an error message **Error loading Python DLL: C:\Users\Afro\AppData\Local\Temp_MEI51322\python35.dll(error code 193)**. I don't know why.
+5. Reference [error-when-creating-executable-file-with-pyinstaller](https://stackoverflow.com/questions/38811966/error-when-creating-executable-file-with-pyinstaller)
+
 # locate python executable file
 ```python
 import sys

@@ -11,4 +11,8 @@ Press Win key to open start menu. And type service into the **Search programs an
 
 # Solution
 1. Open run dialog ant type "eventvwr.msc" to open **Event Viewer**.
-2. Go to **Event Viewer(Local)| Windows Logs| Application**. Finding error items.
+2. Go to **Event Viewer(Local)| Windows Logs| Application**. Finding error items and I got bellow information.
+```
+Timed out waiting for server startup
+```
+3. Reinstall postgresql to the latest version.

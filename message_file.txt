@@ -1,2 +1,1 @@
-[+] 2019-05-09-I can't start postgresql service_service on Local Computer started and then stopped
-[+] 2019-05-10-Learning React Native
+[+] 2019-04-29-python tips.markdown - How to generate a executable file
