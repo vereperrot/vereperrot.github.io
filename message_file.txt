@@ -1,2 +1,1 @@
-[+] '2019-05-24-How to create a flutter desktop application' modify the image
-path. 
+[+] '2019-05-24-building a native app with flutter
