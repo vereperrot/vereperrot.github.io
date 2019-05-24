@@ -49,7 +49,7 @@ flutter run
 * The app code placed at **flutter-desktop-embedding\example\lib\main.dart**. When the flutter running, press **r** to hot reload after you modified the app code.
 * If you want to change the title, you can modify the file **flutter-desktop-embedding\example\windows\flutter_embedder_example.cpp** to change it. Then quit the ```flutter run``` and restart it. The title changed.
 * If you minimize the desktop application, it will quit automatically.
-![perrot-flutter-desktop-example](asserts\perrot-flutter-desktop-example.png)
+![perrot-flutter-desktop-example](/asserts/perrot-flutter-desktop-example.png)
 
 ## Reference
 * [Flutter for Desktop: Create and Run a Desktop Application](https://medium.com/flutter-community/flutter-for-desktop-create-and-run-a-desktop-application-ebeb1604f1e0)
