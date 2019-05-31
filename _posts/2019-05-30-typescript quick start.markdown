@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ""
+title:  "typescript quick start"
 date:   2019-05-30 00:01:57 +0800
 categories: typescript
 ---
