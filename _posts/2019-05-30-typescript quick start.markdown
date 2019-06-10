@@ -70,6 +70,39 @@ tsc greeter.ts
 5. Can not find name google? If you use google map api in your code, type the commnad ```npm install --save @types/googlemaps``` to fix the problem.
 6. Uncaught ReferenceError: handleLocationError is not defined google maps api? You need to use HTTPS, use a service like https://letsencrypt.org/ (It’s free, automated, and open.)
 
+## FAQ
+### add functions to windows with d ts file
+1. npm install typings --global
+2. Edit typings/custom/window.d.ts:
+```
+interface Window {
+  MyNamespace: any;
+}
+declare var window: Window;
+```
+
+3. Install the custom typing
+```
+typings install file:typings/custom/window.d.ts --save --global
+```
+4. Use it.
+```
+window.MyNamespace = window.MyNamespace || {};
+```
+5. [reference](https://stackoverflow.com/questions/50488121/typescript-add-functions-to-window-with-d-ts-file)
+
+### Use svg point
+1. Code
+```
+let svg: SVGSVGElement = <any>document.getElementById('svg');
+let polyline: SVGPolylineElement = <any>svg.getElementById('polyline');
+let point: SVGPoint = svg.createSVGPoint();
+point.x = 0;
+point.y = 0;
+polyline.points.appendItem(point);
+```
+2. [Reference](https://stackoverflow.com/questions/52743698/svg-polyline-manipulation-in-typescript)
+
 ## Reference
 * [TypeScript: What is it & when is it useful?](https://medium.com/front-end-weekly/typescript-what-is-it-when-is-it-useful-c4c41b5c4ae7)
 * [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
