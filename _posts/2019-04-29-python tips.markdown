@@ -5,6 +5,39 @@ date:   2019-04-29 00:01:57 +0800
 categories: python
 ---
 
+# Quit a python script
+```
+import sys
+sys.exit()
+```
+
+# List all available video devices
+```
+# Example 1
+import cv2
+def testDevice(source):
+   cap = cv2.VideoCapture(source) 
+   if cap is None or not cap.isOpened():
+       print('Warning: unable to open video source: ', source)
+
+testDevice(0) # no printout
+testDevice(1) # prints message
+
+# Example 2
+def listAllAvailableVideoDevice():
+    index = 0
+    arr = []
+    while True:
+        cap = cv2.VideoCapture(index)
+        if not cap.read()[0]:
+            break
+        else:
+            arr.append(index)
+        cap.release()
+        index += 1
+    return arr
+```
+
 # How to generate a executable file
 1. ```python -m pip install pyinstaller```
 2. ```pyinstaller -F .\hello.py -i search.ico -c --onedir --onefile --clean --noupx```

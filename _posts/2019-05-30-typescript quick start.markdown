@@ -62,6 +62,14 @@ tsc greeter.ts
 ```
 4. open **greeter.html** in the web browser
 
+## Use VS Code
+1. [Download and install vs code](https://code.visualstudio.com/download)
+2. Right click a typescript file to show the context menu. Select **Open with code** menu item.
+3. How to word wrap? **ALT+Z** or go to the menu **VIEW| Toggle Word Wrap**.
+4. How to compile? **Ctrl+`** or go to the menu **VIEW|Terminal**. Type the command ```tsc .\file.ts --watch```. With **--watch** option it will auto compile when the file changed.
+5. Can not find name google? If you use google map api in your code, type the commnad ```npm install --save @types/googlemaps``` to fix the problem.
+6. Uncaught ReferenceError: handleLocationError is not defined google maps api? You need to use HTTPS, use a service like https://letsencrypt.org/ (It’s free, automated, and open.)
+
 ## Reference
 * [TypeScript: What is it & when is it useful?](https://medium.com/front-end-weekly/typescript-what-is-it-when-is-it-useful-c4c41b5c4ae7)
 * [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
