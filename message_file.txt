@@ -1,1 +1,1 @@
-[+] pwa test
+[+] pwa test - fix path problem
