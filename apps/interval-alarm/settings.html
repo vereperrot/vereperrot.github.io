@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>Math Quiz Settings</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font-family-allerta-stencil.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+
+<body>
+<div class="w3-container w3-allerta">
+  <div class="w3-padding w3-xxxlarge">
+	  <a href="index.html"><i class="fa fa-arrow-left " style="font-size: larger;"></i></a>
+  </div>
+  <div class="w3-padding w3-large" >
+<p style="    margin-top: 0px;">
+	  <label style="    font-size: x-large;">How many interval seconds alarm?</label>
+	<input id="inputSeconds"class="w3-input w3-border w3-round-xxlarge w3-show" placeholder="Seconds"value="30"name="last" type="text" style="    font-size: x-large;">
+</p>
+	<div>
+		<input class="w3-check" type="checkbox" id="enableSound">
+		<label style="    font-size: x-large;">Enable Sound</label>
+		<button class="w3-btn w3-round-xxlarge w3-black w3-block" onclick="saveSettings()">Save</button>
+	</div>
+    </div>
+</div>
+	<script>
+const INTERVAL_SECONDS = "IntervalSeconds";
+const ENABLE_SOUND="EnableSound";
+function saveSettings(){
+	var inputSeconds=document.getElementById("inputSeconds");
+	var enableSound=document.getElementById("enableSound");
+
+	localStorage.setItem(INTERVAL_SECONDS, inputSeconds.value);
+	localStorage.setItem(ENABLE_SOUND, enableSound.checked);
+	location.href='index.html';
+}
+function loadSettings(){
+	var inputSeconds=document.getElementById("inputSeconds");
+	var enableSound=document.getElementById("enableSound");
+
+	inputSeconds.value=localStorage.getItem(INTERVAL_SECONDS);
+	enableSound.checked=localStorage.getItem(ENABLE_SOUND);
+}
+loadSettings();
+	</script>
+</body>
+</html>
