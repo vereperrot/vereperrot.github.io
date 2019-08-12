@@ -1,1 +1,1 @@
-[+] update interval-alarm app
+[+] tuning interval-alarm app by audits

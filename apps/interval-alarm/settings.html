@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
-<title>Math Quiz Settings</title>
+<html lang="en">
+<title>Interval Alarm Settings</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
+<meta name="Description" content="Interval alarm settings">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-family-allerta-stencil.css">
@@ -13,22 +14,24 @@
 </style>
 
 <body>
+	<main>
 <div class="w3-container w3-allerta">
   <div class="w3-padding w3-xxxlarge">
-	  <a href="index.html"><i class="fa fa-arrow-left " style="font-size: larger;"></i></a>
+	  <a href="index.html" aria-label="Go to home page"><i class="fa fa-arrow-left " style="font-size: larger;"></i></a>
   </div>
   <div class="w3-padding w3-large" >
-<p style="    margin-top: 0px;">
-	  <label style="    font-size: x-large;">How many interval seconds alarm?</label>
-	<input id="inputSeconds"class="w3-input w3-border w3-round-xxlarge w3-show" placeholder="Seconds"value="30"name="last" type="text" style="    font-size: x-large;">
-</p>
+	<p style="    margin-top: 0px;">
+		  <label style="    font-size: x-large;">How many interval seconds alarm?</label>
+		<input id="inputSeconds"class="w3-input w3-border w3-round-xxlarge w3-show" placeholder="Seconds"value="30"name="last" type="text" style="    font-size: x-large;"  aria-label="Input seconds">
+	</p>
 	<div>
-		<input class="w3-check" type="checkbox" id="enableSound">
+		<input class="w3-check" type="checkbox" id="enableSound" aria-label="Enable sound">
 		<label style="    font-size: x-large;">Enable Sound</label>
 		<button class="w3-btn w3-round-xxlarge w3-black w3-block" onclick="saveSettings()">Save</button>
 	</div>
     </div>
 </div>
+	</main>
 	<script>
 const INTERVAL_SECONDS = "IntervalSeconds";
 const ENABLE_SOUND="EnableSound";
