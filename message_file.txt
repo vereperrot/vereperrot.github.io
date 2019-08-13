@@ -1,1 +1,1 @@
-[+] Update index page of interval-alarm pwa app 
+[+] Update sw.js of interval-alarm pwa app 
