@@ -2,6 +2,7 @@ var cacheName = 'interval-alarm-pwa';
 var filesToCache = [
   '/',
   '/apps/interval-alarm/index.html',
+  '/apps/interval-alarm/favicon.ico',
   '/apps/interval-alarm/about.html',
   '/apps/interval-alarm/settings.html',
   '/apps/interval-alarm/css/font-awesome.min.css',
@@ -17,7 +18,14 @@ var filesToCache = [
   '/apps/interval-alarm/js/main.js',
   '/apps/interval-alarm/snd/alarm.mp3',
   '/apps/interval-alarm/snd/alarm.ogg',
-  '/apps/interval-alarm/snd/alarm.wav'
+  '/apps/interval-alarm/snd/alarm.wav',
+  '/apps/interval-alarm/images/icon-128.png',
+  '/apps/interval-alarm/images/icon-144.png',
+  '/apps/interval-alarm/images/icon-152.png',
+  '/apps/interval-alarm/images/icon-192.png',
+  '/apps/interval-alarm/images/icon-256.png',
+  '/apps/interval-alarm/images/icon-512.png'
+
 ];
 //console.log('in sw.js');
 /* Start the service worker and cache all of the app's content */
