@@ -1,4 +1,4 @@
-var cacheName = 'interval-alarm-pwa-1';
+var cacheName = 'interval-alarm-pwa-2';
 var filesToCache = [
   '/',
   '/apps/interval-alarm/index.html',
@@ -37,7 +37,7 @@ self.addEventListener('install', function(e) {
     })
   );*/
 	e.waitUntil(
-    caches.open(cacheStorageKey)
+    caches.open(cacheName)
     .then(cache => cache.addAll(cacheList))
     .then(() => self.skipWaiting())
   )
@@ -70,7 +70,7 @@ self.addEventListener('activate',function(e){
       return Promise.all(
         // get all cache content diff from current version cache
         cacheNames.filter(cacheNames => {
-          return cacheNames !== cacheStorageKey
+          return cacheNames !== cacheName
         }).map(cacheNames => {
           return caches.delete(cacheNames)
         })
