@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Math Quiz Play</title>
+<meta name="Description" content="Math quiz play page">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="js/quiz.js"></script>
+<script src="js/util.js"></script>
+<script src="js/stopwatch.js"></script>
+<link rel="stylesheet" href="css/main.css">
+<body>
+	<input type="button" class="w3-hide" value="Start" id="sw-go" disabled/>
+	<audio id="CorrectSnd">
+  <source src="snd/correct.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+	<audio id="WrongSnd">
+  <source src="snd/wrong.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<div class="w3-container">
+  <div class="w3-padding w3-xxxlarge">
+	  <a href="javascript:void(0)" onclick="goLevelPage()" aria-label="Go to home page"><i class="fa fa-arrow-left  " style="font-size: larger;"></i></a>
+	  <span id="CurrentLevel" style="font-size: larger;">1/20</span>
+	  <span id="sw-time" class="w3-right" style="font-size: larger;">00:00</span>
+  </div>
+  <div class="w3-padding w3-large" >
+      <div class="w3-container w3-cell">
+          <h1 id="hintIcon"><a href="javascript:void(0)" onclick="showHint()" aria-label="Show hint"><i class="fa fa-question " style="font-size: larger;"></i></a></h1>
+          <h1><a href="javascript:void(0)" onclick="speak()" aria-label="Speak"><i class="fa fa-volume-up  " style="font-size: larger;"></i></a></h1>
+      </div>
+      <div class="w3-container w3-cell">
+          <h1 id="Question" class="" data-ans=""style="font-family: cursive;font-size: xx-large;">qu</h1>
+      </div>
+	  <div class="w3-cell-row">
+		<div class="w3-container w3-cell w3-mobile" style="padding-bottom: 16px;
+	    font-family: cursive;
+	    font-size: xx-large; width:50%">
+		<button id="Ans1"class="w3-btn w3-round-xxlarge w3-block" onclick="checkAnswer(this)"></button>
+		</div>
+		<div class="w3-container w3-cell w3-mobile" style="padding-bottom: 16px;
+	    font-family: cursive;
+	    font-size: xx-large;width:50%">
+		<button  id="Ans2"class="w3-btn w3-round-xxlarge w3-block" onclick="checkAnswer(this)"></button>
+		</div>
+	  </div>
+	  <div class="w3-cell-row">
+		<div class="w3-container w3-cell w3-mobile" style="padding-bottom: 16px;
+	    font-family: cursive;
+	    font-size: xx-large;width:50%">
+		<button  id="Ans3"class="w3-btn w3-round-xxlarge w3-block" onclick="checkAnswer(this)"></button>
+		</div>
+		<div class="w3-container w3-cell w3-mobile" style="padding-bottom: 16px;
+	    font-family: cursive;
+	    font-size: xx-large;width:50%">
+		<button  id="Ans4"class="w3-btn w3-round-xxlarge w3-block" onclick="checkAnswer(this)"></button>
+		</div>
+	  </div>
+  </div>
+</div>
+
+
+<!--Show go next dialog-->
+<div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-bottom" style="
+    background-color: transparent;
+">
+      <!--<header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+	       class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2><i class="fa fa-heart-o w3-text-green " style="font-size: larger;"></i> Wrong Answer</h2>
+      </header>-->
+      <button id="btnGoNext"class="w3-btn w3-xlarge w3-round-xxlarge w3-green w3-block" onclick="goNextLevel()">Next Quiz</button>
+    </div>
+  </div>
+</div>
+
+<!--Show hint dialog-->
+<div id="hintDialog" class="w3-modal w3-animate-opacity">
+   <div class="w3-modal-content w3-round-xxlarge w3-text-green" style="
+    background-color: white;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-family: cursive;
+">
+      <header class="w3-container"> 
+        
+        <h2 style="
+    font-weight: bolder;
+"><i class="fa fa-question  " style="font-size: larger;"></i> Hint</h2>
+      </header>
+      <h3 id="hintText"></h3>
+      <button class="w3-btn w3-xlarge w3-round-xxlarge w3-green w3-block" onclick="document.getElementById('hintDialog').style.display='none'">Close</button>
+    </div>
+</div>
+	<script>
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    console.log('Query variable %s not found', variable);
+}
+
+function getWrongAns(ans , ansArr){
+	ans=parseInt(ans);
+	var offset=getRandom(1,ans);
+	console.log('ans:'+ans);
+	console.log('offset:'+offset);
+	var wrongAns=getRandom(ans-offset,ans+offset);
+	console.log('wrongAns:'+wrongAns);
+	while(ansArr.includes(wrongAns)){
+		offset=getRandom(1,ans);
+		wrongAns=getRandom(ans-offset,ans+offset);
+		console.log('in offset:'+offset);
+	}
+	ansArr.push(wrongAns);
+	console.log(ansArr);
+	return wrongAns;
+}
+function goLevelPage(){
+	if(_isEasyLev){
+	location.href='easy-level.html';
+	}else{
+	location.href='hard-level.html';
+	}
+}
+function goNextLevel(){
+	var btnGoNext=document.getElementById("btnGoNext");
+	if(btnGoNext.innerText=="Finish"){
+		if(_isEasyLev){
+		location.href='easy-level.html';
+		}else{
+		location.href='hard-level.html';
+		}
+		return;
+	}
+	//go next level
+	var text=document.getElementById("CurrentLevel").innerText;
+	var arr=text.split("/");
+	var level=parseInt(arr[0])+1;
+	var total=parseInt(arr[1]);
+
+	if(level>total){//Finish all quiz
+		btnGoNext.innerText="Finish";
+		document.getElementById('id01').style.display='block';
+	}else{//Go next quiz
+		if(_isEasyLev)
+			location.href='play.html?el='+level;
+		else
+			location.href='play.html?hl='+level;
+	}
+}
+var _correctAudio=document.getElementById("CorrectSnd");
+var _wrongAudio=document.getElementById("WrongSnd");
+_correctAudio.onended = function() {
+	goNextLevel();
+};
+_wrongAudio.onended = function() {
+	document.getElementById('id01').style.display='block';
+};
+function checkAnswer(elm){
+	var qElm=document.getElementById("Question");
+	var audio;
+	sw.stop();
+	if(elm.innerHTML==qElm.getAttribute("data-ans")){
+		console.log("correct");
+		updateStatus(true);
+		//play sound
+		_correctAudio.play();
+		
+	}else{
+		elm.classList.remove("w3-green");
+		elm.classList.add("w3-red");
+		console.log("wrong");
+		updateStatus(false);
+		//play sound
+		_wrongAudio.play();
+	}
+}
+function updateStatus(result){
+	for(var i=0;i<_qs.length;i++){
+		if(_qs[i].l==_level){
+			_qs[i].r=result;
+			_qs[i].t=document.getElementById("sw-time").innerText;
+		}
+	}
+	if(_isEasyLev)
+		localStorage.setItem("eq", JSON.stringify(_qs));
+	else
+		localStorage.setItem("hq", JSON.stringify(_qs));
+}
+var _qs;
+var _level;
+var _isEasyLev=false;
+function InitialQuiz(){
+	_level=getQueryVariable("el");
+	_isEasyLev=false;
+	var quizLen;
+	var qn;
+
+	if(_level==undefined){
+		_isEasyLev=false;
+		console.log("is hard level");
+	}else{
+		_isEasyLev=true;
+		console.log("is easy level");
+	}
+	if(_isEasyLev){
+		document.getElementById("hintIcon").classList.add("w3-hide");
+		_qs= JSON.parse(localStorage.getItem("eq") || "[]");
+		quizLen=_qs.length;
+		qn=easy_qn[_level-1];
+	}
+	else{
+		_level=getQueryVariable("hl")
+		_qs= JSON.parse(localStorage.getItem("hq") || "[]");
+		quizLen=_qs.length;
+		qn=hard_qn[_level-1];
+	}
+	document.getElementById("CurrentLevel").innerHTML=_level+"/"+quizLen;
+	console.log(qn);
+	var qElm=document.getElementById("Question");
+	qElm.innerHTML=qn.qn;
+	qElm.setAttribute("data-ans",qn.ans);
+	var num=getRandom(1,4);
+	document.getElementById("Ans"+num).innerHTML=qn.ans;
+	var ansArr=[qn.ans];
+	for(var i=1;i<=4;i++){
+		if(i==num) continue;
+		console.log('aa');
+		document.getElementById("Ans"+i).innerHTML=getWrongAns(qn.ans,ansArr);
+	}
+}
+function speak(){
+    var q=document.getElementById("Question").innerText;
+    speechSynthesis.speak(new SpeechSynthesisUtterance(q));
+}
+function showHint(){
+	qn=hard_qn[_level-1];
+	
+	document.getElementById("hintText").innerHTML=qn.hint;
+	document.getElementById('hintDialog').style.display='block';
+}
+InitialQuiz();
+
+	</script>
+</body>
+</html>

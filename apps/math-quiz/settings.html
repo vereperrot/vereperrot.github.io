@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Math Quiz Settings</title>
+<meta name="Description" content="Math quiz settings page">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.css">
+<body>
+	<main>
+<div class="w3-container">
+  <div class="w3-padding w3-xxxlarge">
+	  <a href="index.html" aria-label="Go to home page"><i class="fa fa-arrow-left" style="font-size: larger;"></i></a>
+  </div>
+  <div class="w3-content w3-center" style="font-size: large;">
+	<div class="w3-container w3-block w3-mobile" style="padding-bottom: 16px;
+    font-family: cursive;
+    font-size: xx-large;">
+	<button class="w3-btn w3-round-xxlarge w3-block" onclick="reset()">Reset</button>
+	</div>
+  </div>
+</div>
+<!--Show dialog-->
+<div id="resetDialog" class="w3-modal w3-animate-opacity">
+   <div class="w3-modal-content w3-round-xxlarge w3-text-green" style="
+    background-color: white;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-family: cursive;
+">
+      <header class="w3-container"> 
+        
+        <h2 style="
+    font-weight: bolder;
+"><i class="fa fa-info" style="font-size: larger;"></i> Reset complete!</h2>
+      </header>
+      <!--<h3 id="hintText"></h3>-->
+      <button class="w3-btn w3-xlarge w3-round-xxlarge w3-block" onclick="document.getElementById('resetDialog').style.display='none'">Close</button>
+    </div>
+</div>
+	</main>
+	<script>
+function resetByKey(key){
+	var qs;
+	qs= JSON.parse(localStorage.getItem(key) || "[]");
+	for(var i=0;i<qs.length;i++){
+		qs[i].r=false;
+		qs[i].t="00:00:00";
+
+	}
+	localStorage.setItem(key, JSON.stringify(qs));
+}
+function reset(){
+	resetByKey("hq");
+	resetByKey("eq");
+	document.getElementById('resetDialog').style.display='block';
+}
+	</script>
+</body>
+</html>

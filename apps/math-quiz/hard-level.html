@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Math Quiz Hard Level</title>
+<meta name="Description" content="Math quiz hard level page">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="js/quiz.js"></script>
+<style>
+#arrowLeft{color:#2B642D;background-color:#fff;}
+button{color:#fff !important;background-color:#2B642D !important;}
+</style>
+<body>
+	<main>
+<div class="w3-container">
+  <div class="w3-padding w3-xxxlarge">
+	  <a href="index.html" aria-label="Go to home page"><i id="arrowLeft" class="fa fa-arrow-left " style="font-size: larger;"></i></a>
+  </div>
+  <div class="w3-container" id="content">
+	  <button class="w3-btn w3-round-xxlarge  w3-cell" onclick="location.href='play.html?hl=%LEVEL%'" style="font-size: larger;    margin-right: 8px;margin-top:8px"><i class="fa fa-heart w3-text-white" style="font-size: larger;padding-right: 5px;"></i><span style="font-size: larger;">%TIME%</span><br><span  style="font-weight: bolder;font-size: x-large;">%LEVEL%</span></button>
+  </div> 
+</div>
+<script>
+var btn=document.getElementById("content").innerHTML;
+document.getElementById("content").innerHTML="";
+var html="";
+var defTime="00:00:00";
+
+var hq= JSON.parse(localStorage.getItem("hq") || "[]");
+
+var qs=[];
+html+="<div class=\"w3-row\">";
+for(var i=1;i<=hard_qn.length;i++){
+	var q;
+	if(hq!=undefined){
+		if(hq[i-1]!=undefined){
+			q={'t':hq[i-1].t,'l':i,'r':hq[i-1].r};
+			tmp=btn.replace("%TIME%",hq[i-1].t);
+			if(hq[i-1].r)
+			tmp=tmp.replace("w3-text-white","w3-text-red");
+		}else{
+			q={'t':defTime,'l':i,'r':false};
+			tmp=btn.replace("%TIME%",defTime);
+		}
+	}else{
+		q={'t':defTime,'l':i,'r':false};
+		tmp=btn.replace("%TIME%",defTime);
+
+	}
+	html+="<div class=\"w3-col m3 w3-center\">"+tmp.replace(/%LEVEL%/g,i)+"</div>";
+	if(i%4==0){
+		if(i==hard_qn.length)
+		html+="</div>";
+		else
+		html+="</div><div class=\"w3-row\">";
+	}
+	
+	qs.push(q);
+}
+if(html.endsWith("\"w3-row\"")==false){
+	html+="</div>";
+}
+localStorage.setItem("hq", JSON.stringify(qs));
+document.getElementById("content").innerHTML=html;
+
+</script>
+</main>
+</body>
+</html>
