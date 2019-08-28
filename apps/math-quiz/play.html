@@ -28,6 +28,7 @@
   </div>
   <div class="w3-padding w3-large" >
       <div class="w3-container w3-cell">
+          <h1><i id="heart" class="fa fa-heart-o" style="font-size: larger;"></i></h1>
           <h1 id="hintIcon"><a href="javascript:void(0)" onclick="showHint()" aria-label="Show hint"><i class="fa fa-question " style="font-size: larger;"></i></a></h1>
           <h1><a href="javascript:void(0)" onclick="speak()" aria-label="Speak"><i class="fa fa-volume-up  " style="font-size: larger;"></i></a></h1>
       </div>
@@ -228,6 +229,11 @@ function InitialQuiz(){
 	}
 	document.getElementById("CurrentLevel").innerHTML=_level+"/"+quizLen;
 	console.log(qn);
+	var heartElm=document.getElementById("heart");
+	if(_qs[_level-1].r){//pass
+		heartElm.classList.remove("fa-heart-o");
+		heartElm.classList.add("fa-heart");
+	}
 	var qElm=document.getElementById("Question");
 	qElm.innerHTML=qn.qn;
 	qElm.setAttribute("data-ans",qn.ans);
