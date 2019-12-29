@@ -1,2 +1,2 @@
-[+] math quiz pwa app :If you pass a quiz, show a heart at play.html page.
+[+] update tpr app.
 

@@ -1,0 +1,31 @@
+Settings button, 
+
+auto save check box, 
+
+【-】show toolbar, 
+
+【-】show scrolldown button ,
+
+【-】layout button, 
+
+add footer, 
+
+[-]night mode, 
+
+【-】markdown help, 
+
+[-]anguage, 
+
+find tool, 
+
+ddeenote
+
+about
+
+<div class="btn-group btn-toggle"> 
+    <button class="btn btn-lg btn-secondary active">OFF</button>
+    <button class="btn btn-lg btn-success ">&#32;&#32;</button>
+  </div>      
+
+
+https://www.bootply.com/92189

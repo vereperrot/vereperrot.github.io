@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+.fa {width:16px;height:16px}
+</style>
+<script>
+$(document).ready(function(){
+  $('.btn-toggle').click(function() {
+    $(this).find('.btn').toggleClass('active');  
+	  console.log($(this).find('.btn-success').length);
+    if ($(this).find('.btn-success').length>0) {
+	    $(this).removeClass('.btn-success');
+	    $(this).css('background','lightgray');
+	    //$(this).addClass('.btn-secondary');
+    }else{
+	    $(this).removeClass('.btn-secondary');
+	    $(this).addClass('.btn-success');
+    }
+//    	$(this).find('.btn').toggleClass('btn-success');
+    
+ //   $(this).find('.btn').toggleClass('btn-default');
+       
+});
+});
+</script>
+<script>
+var Showdown={extensions:{}},forEach=Showdown.forEach=function(b,f){if("function"==typeof b.forEach)b.forEach(f);else{var c,h=b.length;for(c=0;c<h;c++)f(b[c],c,b)}},stdExtName=function(b){return b.replace(/[_-]||\s/g,"").toLowerCase()};
+Showdown.converter=function(b){var f,c,h,n=0,t=[],v=[];if("undefind"!=typeof module&&"undefined"!=typeof exports&&"undefind"!=typeof require){var u=require("fs");u&&(u=u.readdirSync((__dirname||".")+"/extensions").filter(function(a){return~a.indexOf(".js")}).map(function(a){return a.replace(/\.js$/,"")}),Showdown.forEach(u,function(a){var d=stdExtName(a);Showdown.extensions[d]=require("./extensions/"+a)}))}this.makeHtml=function(a){return f={},c={},h=[],a=a.replace(/~/g,"~T"),a=a.replace(/\$/g,"~D"),
+a=a.replace(/\r\n/g,"\n"),a=a.replace(/\r/g,"\n"),a="\n\n"+a+"\n\n",a=w(a),a=a.replace(/^[ \t]+$/mg,""),Showdown.forEach(t,function(d){a=D(d,a)}),a=J(a),a=E(a),a=K(a),a=x(a),a=F(a),a=a.replace(/~D/g,"$$"),a=a.replace(/~T/g,"~"),Showdown.forEach(v,function(d){a=D(d,a)}),a};if(b&&b.extensions){var L=this;Showdown.forEach(b.extensions,function(a){"string"==typeof a&&(a=Showdown.extensions[stdExtName(a)]);if("function"!=typeof a)throw"Extension '"+a+"' could not be loaded.  It was either not found or is not a valid extension.";
+Showdown.forEach(a(L),function(a){a.type?"language"===a.type||"lang"===a.type?t.push(a):("output"===a.type||"html"===a.type)&&v.push(a):v.push(a)})})}var D=function(a,d){if(a.regex)return d.replace(RegExp(a.regex,"g"),a.replace);if(a.filter)return a.filter(d)},K=function(a){return a+="~0",a=a.replace(/^[ ]{0,3}\[(.+)\]:[ \t]*\n?[ \t]*<?(\S+?)>?[ \t]*\n?[ \t]*(?:(\n*)["(](.+?)[")][ \t]*)?(?:\n+|(?=~0))/gm,function(a,e,k,b,q){return e=e.toLowerCase(),f[e]=G(k),b?b+q:(q&&(c[e]=q.replace(/"/g,"&quot;")),
+"")}),a=a.replace(/~0/,""),a},E=function(a){a=a.replace(/\n/g,"\n\n");return a=a.replace(/^(<(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del)\b[^\r]*?\n<\/\2>[ \t]*(?=\n+))/gm,r),a=a.replace(/^(<(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|style|section|header|footer|nav|article|aside)\b[^\r]*?<\/\2>[ \t]*(?=\n+)\n)/gm,r),a=a.replace(/(\n[ ]{0,3}(<(hr)\b([^<>])*?\/?>)[ \t]*(?=\n{2,}))/g,r),a=a.replace(/(\n\n[ ]{0,3}<!(--[^\r]*?--\s*)+>[ \t]*(?=\n{2,}))/g,
+r),a=a.replace(/(?:\n\n)([ ]{0,3}(?:<([?%])[^\r]*?\2>)[ \t]*(?=\n{2,}))/g,r),a=a.replace(/\n\n/g,"\n"),a},r=function(a,d){var e=d;return e=e.replace(/\n\n/g,"\n"),e=e.replace(/^\n/,""),e=e.replace(/\n+$/g,""),e="\n\n~K"+(h.push(e)-1)+"K\n\n",e},x=function(a){a=M(a);var d=l("<hr />");a=a.replace(/^[ ]{0,2}([ ]?\*[ ]?){3,}[ \t]*$/gm,d);a=a.replace(/^[ ]{0,2}([ ]?\-[ ]?){3,}[ \t]*$/gm,d);a=a.replace(/^[ ]{0,2}([ ]?\_[ ]?){3,}[ \t]*$/gm,d);a=H(a);a=N(a);a=O(a);a=E(a);for(var d=a.replace(/^\n+/g,""),d=
+d.replace(/\n+$/g,""),e=d.split(/\n{2,}/g),d=[],k=e.length,b=0;b<k;b++){var c=e[b];0<=c.search(/~K(\d+)K/g)?d.push(c):0<=c.search(/\S/)&&(c=s(c),c=c.replace(/^([ \t]*)/g,"<p>"),c+="</p>",d.push(c))}k=d.length;for(b=0;b<k;b++)for(;0<=d[b].search(/~K(\d+)K/);)e=h[RegExp.$1],e=e.replace(/\$/g,"$$$$"),d[b]=d[b].replace(/~K\d+K/,e);return a=d.join("\n\n"),a},s=function(a){a=P(a);var d=a=Q(a),d=a=(d=d.replace(/\\(\\)/g,y),d=d.replace(/\\([`*_{}\[\]()>#+-.!])/g,y),d),d=a=(d=d.replace(/(!\[(.*?)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g,
+I),d=d.replace(/(!\[(.*?)\]\s?\([ \t]*()<?(\S+?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,I),d);a=(d=d.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g,z),d=d.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\]\([ \t]*()<?(.*?(?:\(.*?\).*?)?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,z),d=d.replace(/(\[([^\[\]]+)\])()()()()()/g,z),d);a=R(a);d=a=G(a);return a=(d=d.replace(/(\*\*|__)(?=\S)([^\r]*?\S[*_]*)\1/g,"<strong>$2</strong>"),d=d.replace(/(\*|_)(?=\S)([^\r]*?\S)\1/g,"<em>$2</em>"),d),a=a.replace(/  +\n/g,
+" <br />\n"),a},Q=function(a){return a=a.replace(/(<[a-z\/!$]("[^"]*"|'[^']*'|[^'">])*>|<!(--.*?--\s*)+>)/gi,function(a){a=a.replace(/(.)<\/?code>(?=.)/g,"$1`");return a=m(a,"\\`*_"),a}),a},z=function(a,d,e,k,b,q,h,g){void 0==g&&(g="");a=k.toLowerCase();if(""==b)if(""==a&&(a=e.toLowerCase().replace(/ ?\n/g," ")),void 0!=f[a])b=f[a],void 0!=c[a]&&(g=c[a]);else{if(!(-1<d.search(/\(\s*\)$/m)))return d;b=""}b=m(b,"*_");d='<a href="'+b+'"';return""!=g&&(g=g.replace(/"/g,"&quot;"),g=m(g,"*_"),d+=' title="'+
+g+'"'),d+=">"+e+"</a>",d},I=function(a,d,e,b,p,q,h,g){a=e;b=b.toLowerCase();g||(g="");if(""==p){""==b&&(b=a.toLowerCase().replace(/ ?\n/g," "));if(void 0==f[b])return d;p=f[b];void 0!=c[b]&&(g=c[b])}a=a.replace(/"/g,"&quot;");p=m(p,"*_");d='<img src="'+p+'" alt="'+a+'"';return g=g.replace(/"/g,"&quot;"),g=m(g,"*_"),d+=' title="'+g+'"',d+=" />",d},M=function(a){function d(a){return a.replace(/[^\w]/g,"").toLowerCase()}return a=a.replace(/^(.+)[ \t]*\n=+[ \t]*\n+/gm,function(a,b){return l('<h1 id="'+
+d(b)+'">'+s(b)+"</h1>")}),a=a.replace(/^(.+)[ \t]*\n-+[ \t]*\n+/gm,function(a,b){return l('<h2 id="'+d(b)+'">'+s(b)+"</h2>")}),a=a.replace(/^(\#{1,6})[ \t]*(.+?)[ \t]*\#*\n+/gm,function(a,b,c){a=b.length;return l("<h"+a+' id="'+d(c)+'">'+s(c)+"</h"+a+">")}),a},A,H=function(a){a+="~0";var d=/^(([ ]{0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(~0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm;return n?a=a.replace(d,function(a,d,b){a=d;b=-1<b.search(/[*+-]/g)?"ul":"ol";a=a.replace(/\n{2,}/g,"\n\n\n");a=A(a);
+return a=a.replace(/\s+$/,""),a="<"+b+">"+a+"</"+b+">\n",a}):(d=/(\n\n|^\n?)(([ ]{0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(~0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/g,a=a.replace(d,function(a,d,b,c){a=b;c=-1<c.search(/[*+-]/g)?"ul":"ol";a=a.replace(/\n{2,}/g,"\n\n\n");a=A(a);return a=d+"<"+c+">\n"+a+"</"+c+">\n",a})),a=a.replace(/~0/,""),a};A=function(a){return n++,a=a.replace(/\n{2,}$/,"\n"),a+="~0",a=a.replace(/(\n)?(^[ \t]*)([*+-]|\d+[.])[ \t]+([^\r]+?(\n{1,2}))(?=\n*(~0|\2([*+-]|\d+[.])[ \t]+))/gm,
+function(a,b,c,f,h){a=h;return b||-1<a.search(/\n{2,}/)?a=x(B(a)):(a=H(B(a)),a=a.replace(/\n$/,""),a=s(a)),"<li>"+a+"</li>\n"}),a=a.replace(/~0/g,""),n--,a};var N=function(a){return a+="~0",a=a.replace(/(?:\n\n|^)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=~0))/g,function(a,b,c){a=b;return a=C(B(a)),a=w(a),a=a.replace(/^\n+/g,""),a=a.replace(/\n+$/g,""),a="<pre><code>"+a+"\n</code></pre>",l(a)+c}),a=a.replace(/~0/,""),a},J=function(a){return a+="~0",a=a.replace(/(?:^|\n)```(.*)\n([\s\S]*?)\n```/g,
+function(a,b,c){a=c;return a=C(a),a=w(a),a=a.replace(/^\n+/g,""),a=a.replace(/\n+$/g,""),a="<pre><code"+(b?' class="'+b+'"':"")+">"+a+"\n</code></pre>",l(a)}),a=a.replace(/~0/,""),a},l=function(a){return a=a.replace(/(^\n+|\n+$)/g,""),"\n\n~K"+(h.push(a)-1)+"K\n\n"},P=function(a){return a=a.replace(/(^|[^\\])(`+)([^\r]*?[^`])\2(?!`)/gm,function(a,b,c,f,h){a=f;return a=a.replace(/^([ \t]*)/g,""),a=a.replace(/[ \t]*$/g,""),a=C(a),b+"<code>"+a+"</code>"}),a},C=function(a){return a=a.replace(/&/g,"&amp;"),
+a=a.replace(/</g,"&lt;"),a=a.replace(/>/g,"&gt;"),a=m(a,"*_{}[]\\",!1),a},O=function(a){return a=a.replace(/((^[ \t]*>[ \t]?.+\n(.+\n)*\n*)+)/gm,function(a,b){var c=b;return c=c.replace(/^[ \t]*>[ \t]?/gm,"~0"),c=c.replace(/~0/g,""),c=c.replace(/^[ \t]+$/gm,""),c=x(c),c=c.replace(/(^|\n)/g,"$1  "),c=c.replace(/(\s*<pre>[^\r]+?<\/pre>)/gm,function(a,d){var b=d;return b=b.replace(/^  /mg,"~0"),b=b.replace(/~0/g,""),b}),l("<blockquote>\n"+c+"\n</blockquote>")}),a},G=function(a){return a=a.replace(/&(?!#?[xX]?(?:[0-9a-fA-F]+|\w+);)/g,
+"&amp;"),a=a.replace(/<(?![a-z\/?\$!])/gi,"&lt;"),a},R=function(a){return a=a.replace(/<((https?|ftp|dict):[^'">\s]+)>/gi,'<a href="$1">$1</a>'),a=a.replace(/<(?:mailto:)?([-.\w]+\@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)>/gi,function(a,b){return S(F(b))}),a},S=function(a){var b=[function(a){return"&#"+a.charCodeAt(0)+";"},function(a){return"&#x"+a.charCodeAt(0).toString(16)+";"},function(a){return a}];return a="mailto:"+a,a=a.replace(/./g,function(a){if("@"==a)a=b[Math.floor(2*Math.random())](a);else if(":"!=
+a){var c=Math.random();a=0.9<c?b[2](a):0.45<c?b[1](a):b[0](a)}return a}),a='<a href="'+a+'">'+a+"</a>",a=a.replace(/">.+:/g,'">'),a},F=function(a){return a=a.replace(/~E(\d+)E/g,function(a,b){var c=parseInt(b);return String.fromCharCode(c)}),a},B=function(a){return a=a.replace(/^(\t|[ ]{1,4})/gm,"~0"),a=a.replace(/~0/g,""),a},w=function(a){return a=a.replace(/\t(?=\t)/g,"    "),a=a.replace(/\t/g,"~A~B"),a=a.replace(/~B(.+?)~A/g,function(a,b,c){a=b;b=4-a.length%4;for(c=0;c<b;c++)a+=" ";return a}),
+a=a.replace(/~A/g,"    "),a=a.replace(/~B/g,""),a},m=function(a,b,c){b="(["+b.replace(/([\[\]\\])/g,"\\$1")+"])";c&&(b="\\\\"+b);return a=a.replace(RegExp(b,"g"),y),a},y=function(a,b){return"~E"+b.charCodeAt(0)+"E"}};"undefined"!=typeof module&&(module.exports=Showdown);"function"==typeof define&&define.amd&&define("showdown",function(){return Showdown});function TextArea(b){this.textArea=document.getElementById(b)}TextArea.prototype.setValue=function(b){this.textArea.value=b};
+TextArea.prototype.value=function(){return this.textArea.value};TextArea.prototype.getSelection=function(){return this.textArea.value.substring(this.textArea.selectionStart,this.textArea.selectionEnd)};TextArea.prototype.focus=function(){this.textArea.focus()};TextArea.prototype.selectAll=function(){this.select(0,this.textArea.value.length)};
+TextArea.prototype.select=function(b,f){var c=this.textArea;c.focus();c.setSelectionRange?c.setSelectionRange(b,f):c.createTextRange&&(c=c.createTextRange(),c.collapse(!0),c.moveEnd("character",f),c.moveStart("character",b),c.select())};TextArea.prototype.clear=function(){this.textArea.value="";this.textArea.focus()};TextArea.prototype.insertTags=function(b,f){this.insertAtCaret(b+this.getSelection()+f,f.length)};
+TextArea.prototype.hide=function(b){this.textArea.style.display="none"==this.textArea.style.display?"block":"none";console.log(this.textArea.style.display)};
+TextArea.prototype.insertAtCaret=function(b,f){var c=this.textArea;if(document.selection)c.focus(),sel=document.selection.createRange(),sel.text=b,c.focus();else if(c.selectionStart||"0"==c.selectionStart){var h=c.selectionStart,n=c.selectionEnd,t=c.scrollTop;c.value=c.value.substring(0,h)+b+c.value.substring(n,c.value.length);console.log(c.value);c.focus();c.selectionStart=h+b.length-f;c.selectionEnd=h+b.length-f;c.scrollTop=t}else c.value+=b,c.focus()};
+function IFrame(b){this.iFrame=document.getElementById(b)}IFrame.prototype.hide=function(b){this.iFrame.style.display="none"==this.iFrame.style.display?"block":"none";console.log(this.iFrame.style.display)};function Select(b){this.select=document.getElementById(b)}Select.prototype.getSelectedValue=function(){var b=this.select;return-1==b.selectedIndex?null:b.options[b.selectedIndex].value};Select.prototype.getSelectedText=function(){var b=this.select;return-1==b.selectedIndex?null:b.options[b.selectedIndex].text};
+</script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Markdown</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item d-inline-flex p-2 justify-content-between">
+        <a class="nav-link" href="#"><i class="fa fa-save"></i> Auto Save</a>
+	<div class="btn-group btn-toggle"> 
+	    <button class="btn btn-lg btn-success " style="
+	    color: lightgreen;
+	    padding-top: 4px;
+	    padding-bottom: 4px;
+	">ON</button>
+	    <button class="btn btn-lg active" style="
+	    background: lightgray;
+	">  </button>
+        </div>     
+      </li>      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-gear"></i> Show Toolbar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-arrow-down"></i> Show Scrolldown Button</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-columns"></i> Layout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)" onclick="footerOpen()"  data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> Add Footer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-question"></i> Markdown Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-gears"></i> Tools</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-dollar"></i> Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-info"></i> About</a>
+      </li>
+    </ul>
+  </div>  
+</nav>
+
+<div style="margin-right:6px">
+<textarea id="edit" class="form-control" rows="10" placeholder="Enter Markdown" name="text" onkeyup="populateIframe()" style="
+    margin: 6px;
+    font-size: x-large;
+" autofocus=""></textarea>
+<iframe id="myIframe" width="100%" height="100%"></iframe>
+<textarea id='html' style="display:none;font-size: 20px;height: 350px; width: 100%;">
+</textarea>
+
+<!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal" onclick="footerClose()">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="
+    padding-top: 6px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+"><textarea id="footerEdit" class="form-control" rows="10" placeholder="Enter HTML" name="text" onkeyup="populateIframe()" style="
+    margin: 6px;
+    font-size: x-large;
+" autofocus=""></textarea></div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="footerClose()">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	<script>
+var oEdit=new TextArea("edit"),oSelect=new Select("shSel"),oEditHtml=new TextArea("html"),oPreview=new IFrame("myIframe");
+function populateIframe(){
+	console.log("in  populateIframe");
+	var a=new Showdown.converter;
+	console.log("Edit value");
+	a=a.makeHtml(document.getElementById("edit").value);
+	console.log("Html value");
+	console.log(a);
+	var footer;
+	if (typeof(Storage) !== "undefined") {
+		// Code for localStorage/sessionStorage.
+	      footer=localStorage.getItem("footer");
+	} else {
+	      footer=sessionStorage.footer;
+	}
+	a=a+footer;
+	oEditHtml.setValue(a);
+	var b=document.getElementById("myIframe"),b=b.contentWindow?b.contentWindow:b.contentDocument.document?b.contentDocument.document:b.contentDocument;
+	b.document.open();
+	b.document.write(a);
+	b.document.close()
+}
+function footerClose(){
+	var f=document.getElementById("footerEdit");
+	if (typeof(Storage) !== "undefined") {
+		// Code for localStorage/sessionStorage.
+	      localStorage.setItem("footer", f.value);
+	} else {
+	      sessionStorage.footer = f.value;
+	}
+}
+function footerOpen(){
+	var f=document.getElementById("footerEdit");
+	var footer;
+
+	if (typeof(Storage) !== "undefined") {
+		// Code for localStorage/sessionStorage.
+	      footer=localStorage.getItem("footer");
+	} else {
+	      footer=sessionStorage.footer;
+	}
+	console.log(footer);
+	f.value=footer;
+	f.focus();
+}
+	</script>
+</body>
+</html>
+
+
+

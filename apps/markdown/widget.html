@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+.fa {width:16px;height:16px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Markdown</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-save"></i> Auto Save</a>
+	<button type="button" class="btn btn-success active" data-toggle="button" aria-pressed="true" onclick="toggleAutoSave(this)">
+   Off
+</button>
+<div class="btn-group btn-toggle"> 
+    <button class="btn btn-lg" style="
+    background: white;
+">ON</button>
+    <button class="btn btn-lg btn-success active">&#32;&#32;</button>
+  </div>      
+<div class="btn-group btn-toggle"> 
+    <button class="btn btn-lg btn-secondary active">OFF</button>
+    <button class="btn btn-lg btn-success ">&#32;&#32;</button>
+  </div>      
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-gear"></i> Show Toolbar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-arrow-down"></i> Show Scrolldown Button</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-columns"></i> Layout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-edit"></i> Add Footer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-question"></i> Markdown Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-gears"></i> Tools</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-dollar"></i> Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-info"></i> About</a>
+      </li>
+    </ul>
+  </div>  
+</nav>
+<br>
+
+<div class="container">
+  <h3>Collapsible Navbar</h3>
+  <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
+  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
+  <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
+</div>
+
+	<script>
+function toggleAutoSave(btn){
+	btn.setAttribute("aria-pressed",!btn.getAttribute("aria-pressed"));
+}
+	</script>
+</body>
+</html>
+
+
+
