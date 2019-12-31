@@ -1,2 +1,2 @@
-[+] update tpr app.
+[+] update tpr app - add parts of the body words.
 
