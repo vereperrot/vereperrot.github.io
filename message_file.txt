@@ -1,2 +1,5 @@
-[+] update tpr app - add parts of the body words.
+[+]  update tpr app - add parts of the body words.
+[+]  Add "Play this action sound again" button in the hint section
+[+]  Add "Show word" button in the hint section
+[+]  Add "facial things" words 
 
