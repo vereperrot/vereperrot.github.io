@@ -116,7 +116,292 @@ var partsOfTheBody=[
 "touch your ankle",
 "touch your toe"
 ];
-arr=generalBodyMoves.concat(facialThings).concat(partsOfTheBody);
+
+  var kitchenTableStuff=[
+"cup ",
+"plate ",
+"bowl ",
+"knife ",
+"fork ",
+"spoon ",
+"napkin",
+"tissue ",
+"dish ",
+"big round serving tray ",
+"tray you’d serve tea or coffee on ",
+"table ",
+"chair "
+];
+
+var verbs=[
+"where is the %s",
+"touch the %s",
+"show me the %s",
+"pick up the %s",
+"put down the %s",
+"Put the %s there|put the %s back",
+"Put the %s there|return the %s",
+"drop the %s",
+"move the %s",
+"give me the %s|take the %s back",
+"throw the %s",
+"catch the %s",
+"turn over the %s",
+"flip the %s",
+"put the %s on the table",
+"put the %s on the chair",
+"put the %s under the table",
+"put the %s under the chair",
+"push the %s",
+"pull the %s",
+"lift the %s"
+];
+var kitchenStuff =[
+"pan ",
+"oven ",
+"stove ",
+"sink ",
+"faucet ",
+"counter ",
+"cupboard ",
+"refrigerator "
+];
+
+var basicFoods=[
+"flour ",
+"sugar ",
+"bread ",
+"tea leaves ",
+"coffee grounds ",
+"rice ",
+"nuts ",
+"yogurt ",
+"candy"
+];
+var drinks=[
+"water ",
+"milk ",
+"juice ",
+"soda ",
+"yogurt",
+"coffee ",
+"tea "
+];
+var fruitsVegetables=[
+"apple ",
+"banana ",
+"orange ",
+"plum ",
+"grapes ",
+"fig ",
+"dates ",
+"raisons ",
+"lemon ",
+"pomegranate ",
+"watermelon ",
+"tomato ",
+"cucumber ",
+"zucchini ",
+"onion ",
+"carrot ",
+"eggplant ",
+"small eggplant ",
+"potato ",
+"garlic ",
+"parsley ",
+"lettuce ",
+"grape leaves ",
+"celery ",
+"mint ",
+"cabbage"
+];
+var livingRoom=[
+"sofa ",
+"chair ",
+"pillow ",
+"coffee table ",
+"rug ",
+"carpet ",
+"cushion ",
+"window ",
+"curtain ",
+"lamp ",
+"ceiling light ",
+"light switch ",
+"electrical plug ",
+"phone plug ",
+"telephone ",
+"telephone cord ",
+"television ",
+"bookcase "
+];
+var bedroom=[
+"bed ",
+"sheet ",
+"pillow ",
+"blanket ",
+"dresser ",
+"closet ",
+"coat hanger ",
+"mirror "
+];
+var bathroom=[
+"toilet ",
+"bathtub ",
+"toilet paper ",
+"sink ",
+"towel ",
+"shower curtain ",
+"toothbrush ",
+"toothpaste ",
+"comb ",
+"plunger ",
+"shampoo ",
+"deodorant "
+];
+var householdItems=[
+"light bulb ",
+"hammer ",
+"screwdriver ",
+"screw ",
+"wrench ",
+"pliers ",
+"broom ",
+"mop ",
+"dustpan ",
+"sweep the floor ",
+"mop the floor ",
+"trash can ",
+"trash bag ",
+"washing machine ",
+"dryer ",
+"iron ",
+"ironing board ",
+"clothes pin "
+];
+var clothing=[
+"shirt ",
+"pants ",
+"shoe ",
+"shoes ",
+"coat ",
+"underwear ",
+"sock ",
+"socks ",
+"watch ",
+"sweater ",
+"hat ",
+"belt ",
+"dress shirt ",
+"tie ",
+"dress ",
+"skirt ",
+"blouse "
+];
+var office=[
+"office ",
+"desk ",
+"computer ",
+"keyboard ",
+"monitor ",
+"printer ",
+"mouse ",
+"printer cable ",
+"voltage regular ",
+"power cord ",
+"disk drive ",
+"floppy disk ",
+"paper ",
+"modem ",
+"fax machine ",
+"scanner ",
+"shredder "
+];
+    $('#category').change(function(){
+    var cat=document.getElementById("category").value;
+	    arr=[];
+	    console.log("you select "+cat);
+	  switch(cat){
+			  case "move":
+		      buildWords(generalBodyMoves);
+			  break;
+			  case "face":
+		      buildWords(facialThings);
+			  break;
+		  case "kitchenTable":
+		      buildActionWords(kitchenTableStuff);
+		      break;
+	          case "body":
+		      buildWords(partsOfTheBody);
+		      break;
+		  case "kitchenStuff":
+		      buildActionWords(kitchenStuff);
+		      break;
+		case "basicFoods":
+		      buildActionWords(basicFoods);
+		      break;
+		case "drinks":
+		      buildActionWords(drinks);
+		      break;
+		case "fruitsVegetables":
+		      buildActionWords(fruitsVegetables);
+		      break;
+		case "livingRoom":
+		      buildActionWords(livingRoom);
+		      break;
+		case "bedroom":
+		      buildActionWords(bedroom);
+		      break;
+		case "bathroom":
+		      buildActionWords(bathroom);
+		      break;
+		case "householdItems":
+		      buildActionWords(householdItems);
+		      break;
+		case "clothing":
+		      buildActionWords(clothing);
+		      break;
+		case "office":
+		      buildActionWords(office);
+		      break;
+	  }
+    });
+
+function buildActionWords(stuff){
+  console.log("buildActionWords...");
+  shuffle(verbs);
+  for(i=0;i<verbs.length;i++){
+  	shuffle(stuff);
+      for(j=0;j<stuff.length;j++){
+	if(verbs[i].indexOf("|")>-1){
+		var parts=verbs[i].split("|");
+		  arr.push(parts[0].replace("%s",stuff[j]));
+		  arr.push(parts[1].replace("%s",stuff[j]));
+	}else{
+		  arr.push(verbs[i].replace("%s",stuff[j]));
+	}
+      }
+  }
+	console.log("arr...");
+	if(arr.length>MAX_ARR_SIZE){
+	console.log("arr");
+	console.log(arr.length);
+		arr.splice(MAX_ARR_SIZE, arr.length-MAX_ARR_SIZE);
+	console.log(arr.length);
+	console.log("arr end");
+	}
+	//console.log(arr);
+}
+function buildWords(ar){
+	console.log("buildWords...");
+	if(ar.length>MAX_ARR_SIZE){
+		ar.splice(MAX_ARR_SIZE, ar.length-MAX_ARR_SIZE);
+	}
+	 shuffle(ar);
+	 arr=ar;
+	console.log(arr);
+}
+//arr=generalBodyMoves.concat(facialThings).concat(partsOfTheBody);
     $('#shuffle').click(function(){
 	    $('#index').val('shuffle...');
 	    shuffle(arr);
@@ -143,8 +428,11 @@ arr=generalBodyMoves.concat(facialThings).concat(partsOfTheBody);
       speechSynthesis.speak(msg);
     })
 var index=-1;
+var arr=[];
+var MAX_ARR_SIZE=20;
     $('#speaktpr').click(function(){
 index++;
+	    console.log(arr.length);
 //var i=Math.floor(Math.random() * arr.length)
 	    $('#index').val(index+"/"+arr.length)
       var text =arr[index];// $('#message').val();
@@ -182,8 +470,8 @@ index++;
 });
 </script>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.min.css">
-
 <div class="container">
+	
   <div class="row">
     <nav>
       <div class="nav-wrapper">
@@ -232,7 +520,25 @@ index++;
     <a href="#" id="showword" class="waves-effect waves-light btn">2. Show word</a>
   </form>  
   <hr/>
-  <h3>Learn Words</h3>
+
+<select id="category" style="display:block !important">
+  <option value="move">General body movements</option>
+  <option value="face">Facial things</option>
+  <option value="body">Parts of the body</option>
+  <option value="kitchenTable">Kitchen table stuff</option>
+  <option value="kitchenStuff">Kitchen stuff</option>
+  <option value="basicFoods">Basic Foods</option>
+  <option value="drinks">Drinks</option>
+  <option value="fruitsVegetables">Fruits Vegetables</option>
+  <option value="livingRoom">Living Room</option>
+  <option value="bedroom">Bedroom</option>
+  <option value="bathroom">Bathroom</option>
+  <option value="householdItems">Household Items</option>
+  <option value="clothing">Clothing</option>
+  <option value="office">Office</option> 
+</select>
+
+  <h3>1Learn Words</h3>
   <a href="#" id="generalBodyMoves" class="waves-effect waves-light btn">General body movements</a><br/>
   <a href="#" id="facialThings" class="waves-effect waves-light btn">Facial things</a><br/>
   <a href="#" id="partsOfTheBody" class="waves-effect waves-light btn">Parts of the body</a><br/>

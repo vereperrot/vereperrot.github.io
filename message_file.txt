@@ -1,5 +1,15 @@
-[+]  update tpr app - add parts of the body words.
-[+]  Add "Play this action sound again" button in the hint section
-[+]  Add "Show word" button in the hint section
-[+]  Add "facial things" words 
+[+]  update tpr app
+  Add words Kitchen table stuff
+  Add words Kitchen stuff
+  Add words Basic Foods
+  Add words Drinks
+  Add words Fruits Vegetables
+  Add words Living Room
+  Add words Bedroom
+  Add words Bathroom
+  Add words Household Items
+  Add words Clothing
+  Add words Office
+  Select a category to test
+
 
