@@ -1,15 +1,4 @@
-[+]  update tpr app
-  Add words Kitchen table stuff
-  Add words Kitchen stuff
-  Add words Basic Foods
-  Add words Drinks
-  Add words Fruits Vegetables
-  Add words Living Room
-  Add words Bedroom
-  Add words Bathroom
-  Add words Household Items
-  Add words Clothing
-  Add words Office
-  Select a category to test
+[*]  update tpr app
+  Fix problem: when I click the "speak TPR" button, reset the index of the word array.
 
 

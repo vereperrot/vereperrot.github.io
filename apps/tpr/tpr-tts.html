@@ -320,6 +320,7 @@ var office=[
     $('#category').change(function(){
     var cat=document.getElementById("category").value;
 	    arr=[];
+	    index=-1;
 	    console.log("you select "+cat);
 	  switch(cat){
 			  case "move":
@@ -430,6 +431,8 @@ function buildWords(ar){
 var index=-1;
 var arr=[];
 var MAX_ARR_SIZE=20;
+//inital words
+buildWords(generalBodyMoves);
     $('#speaktpr').click(function(){
 index++;
 	    console.log(arr.length);
@@ -553,3 +556,5 @@ index++;
   </div>
 </div>
 </body>
+
+
