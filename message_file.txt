@@ -1,4 +1,6 @@
 [*]  update tpr app
-  Fix problem: when I click the "speak TPR" button, reset the index of the word array.
+ Add action words
+ Fill random number into the sentence "Walk NUMBER steps" and  "Draw NUMBER circles".
+ When I complete a quiz, play "cool! You complete it. "
 
 

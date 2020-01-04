@@ -45,9 +45,9 @@ var generalBodyMoves=[
 "hop ",
 "bend over ",
 "squat ",
-"walk 3 steps",
-"walk 5 steps",
-"walk 10 steps",
+"walk %d steps",
+"walk %d steps",
+"walk %d steps",
 "face me",
 "face the wall ",
 "face the door",
@@ -282,7 +282,6 @@ var householdItems=[
 var clothing=[
 "shirt ",
 "pants ",
-"shoe ",
 "shoes ",
 "coat ",
 "underwear ",
@@ -317,6 +316,39 @@ var office=[
 "scanner ",
 "shredder "
 ];
+var pen=[
+"pick up a pen",
+"take off the cap ",
+"put the cap back on ",
+"write a word ",
+"sign your name ",
+"draw %d line",
+"draw %d circles",
+"draw %d squares"
+	];
+var voiceThings=[
+"speak ",
+"sing ",
+"hum ",
+"whisper ",
+"shout",
+"yell ",
+"stop speaking ",
+"stop singing",
+"stop humming"
+	];
+var numbers=[
+"one",
+"two",
+"three",
+"four",
+"five",
+"six",
+"seven",
+"eight",
+"nine",
+"ten"
+	];
     $('#category').change(function(){
     var cat=document.getElementById("category").value;
 	    arr=[];
@@ -324,52 +356,58 @@ var office=[
 	    console.log("you select "+cat);
 	  switch(cat){
 			  case "move":
-		      buildWords(generalBodyMoves);
+		      buildActionWords(generalBodyMoves);
 			  break;
 			  case "face":
-		      buildWords(facialThings);
+		      buildActionWords(facialThings);
 			  break;
 		  case "kitchenTable":
-		      buildActionWords(kitchenTableStuff);
+		      buildObjectWords(kitchenTableStuff);
 		      break;
 	          case "body":
-		      buildWords(partsOfTheBody);
+		      buildActionWords(partsOfTheBody);
 		      break;
 		  case "kitchenStuff":
-		      buildActionWords(kitchenStuff);
+		      buildObjectWords(kitchenStuff);
 		      break;
 		case "basicFoods":
-		      buildActionWords(basicFoods);
+		      buildObjectWords(basicFoods);
 		      break;
 		case "drinks":
-		      buildActionWords(drinks);
+		      buildObjectWords(drinks);
 		      break;
 		case "fruitsVegetables":
-		      buildActionWords(fruitsVegetables);
+		      buildObjectWords(fruitsVegetables);
 		      break;
 		case "livingRoom":
-		      buildActionWords(livingRoom);
+		      buildObjectWords(livingRoom);
 		      break;
 		case "bedroom":
-		      buildActionWords(bedroom);
+		      buildObjectWords(bedroom);
 		      break;
 		case "bathroom":
-		      buildActionWords(bathroom);
+		      buildObjectWords(bathroom);
 		      break;
 		case "householdItems":
-		      buildActionWords(householdItems);
+		      buildObjectWords(householdItems);
 		      break;
 		case "clothing":
-		      buildActionWords(clothing);
+		      buildObjectWords(clothing);
 		      break;
 		case "office":
-		      buildActionWords(office);
+		      buildObjectWords(office);
+		      break;
+		case "pen":
+		      buildActionWords(pen);
+		      break;
+		case "voiceThings":
+		      buildActionWords(voiceThings);
 		      break;
 	  }
     });
 
-function buildActionWords(stuff){
-  console.log("buildActionWords...");
+function buildObjectWords(stuff){
+  console.log("buildObjectWords...");
   shuffle(verbs);
   for(i=0;i<verbs.length;i++){
   	shuffle(stuff);
@@ -393,10 +431,25 @@ function buildActionWords(stuff){
 	}
 	//console.log(arr);
 }
-function buildWords(ar){
-	console.log("buildWords...");
+function buildActionWords(ar){
+	console.log("buildActionWords...");
+	console.log(numbers);
 	if(ar.length>MAX_ARR_SIZE){
 		ar.splice(MAX_ARR_SIZE, ar.length-MAX_ARR_SIZE);
+	}
+	var shuffleNum=0;
+	var n=0;
+	for(var i=0;i<ar.length;i++){
+		if(ar[i].indexOf("%d")>-1){
+			if(shuffleNum==0){
+				shuffle(numbers);
+				shuffleNum=1;
+			}
+			console.log("***"+ar[i]);
+			console.log("^^^"+numbers[n]);
+			ar[i]=ar[i].replace("%d",numbers[n]);
+			n++;
+		}
 	}
 	 shuffle(ar);
 	 arr=ar;
@@ -432,13 +485,22 @@ var index=-1;
 var arr=[];
 var MAX_ARR_SIZE=20;
 //inital words
-buildWords(generalBodyMoves);
+buildActionWords(generalBodyMoves);
+
     $('#speaktpr').click(function(){
-index++;
-	    console.log(arr.length);
-//var i=Math.floor(Math.random() * arr.length)
-	    $('#index').val(index+"/"+arr.length)
+	    if(index>=arr.length){
+		    return;
+	    }
+	    console.log(index);
+      index++;
+      console.log(arr.length);
+      //var i=Math.floor(Math.random() * arr.length)
+      $('#index').val(index+"/"+arr.length)
       var text =arr[index];// $('#message').val();
+      if(index==arr.length){
+	      text="cool! You complete it.";
+      }
+	    console.log(text);
       var msg = new SpeechSynthesisUtterance();
       var voices = window.speechSynthesis.getVoices();
       msg.voice = voices[$('#voices').val()];
@@ -528,20 +590,22 @@ index++;
   <option value="move">General body movements</option>
   <option value="face">Facial things</option>
   <option value="body">Parts of the body</option>
-  <option value="kitchenTable">Kitchen table stuff</option>
-  <option value="kitchenStuff">Kitchen stuff</option>
-  <option value="basicFoods">Basic Foods</option>
+  <option value="kitchenTable">*Kitchen table stuff</option>
+  <option value="kitchenStuff">*Kitchen stuff</option>
+  <option value="basicFoods">*Basic Foods</option>
   <option value="drinks">Drinks</option>
   <option value="fruitsVegetables">Fruits Vegetables</option>
   <option value="livingRoom">Living Room</option>
   <option value="bedroom">Bedroom</option>
   <option value="bathroom">Bathroom</option>
   <option value="householdItems">Household Items</option>
-  <option value="clothing">Clothing</option>
+  <option value="clothing">*Clothing</option>
   <option value="office">Office</option> 
+  <option value="pen">Things you can do with a pen</option> 
+  <option value="voiceThings">Voice things</option> 
 </select>
 
-  <h3>1Learn Words</h3>
+  <h3>Learn Words</h3>
   <a href="#" id="generalBodyMoves" class="waves-effect waves-light btn">General body movements</a><br/>
   <a href="#" id="facialThings" class="waves-effect waves-light btn">Facial things</a><br/>
   <a href="#" id="partsOfTheBody" class="waves-effect waves-light btn">Parts of the body</a><br/>
