@@ -349,6 +349,42 @@ var numbers=[
 "nine",
 "ten"
 	];
+
+var partsOfTheBody_jp=[
+"髪",
+"額",
+"眉",
+"睫毛",
+"目",
+"耳",
+"頬",
+"鼻",
+"唇",
+"口",
+"口髭",
+"顎髭",
+"顎",
+"喉",
+"歯",
+"舌",
+"胸",
+"背中",
+"肩",
+"お腹 ",
+"腕",
+"足",
+"腿",
+"脛",
+"手",
+"指",
+"親指",
+"ナックル",
+"爪",
+"肘",
+"膝",
+"脚",
+"足首"
+];
     $('#category').change(function(){
     var cat=document.getElementById("category").value;
 	    arr=[];
@@ -403,6 +439,9 @@ var numbers=[
 		case "voiceThings":
 		      buildActionWords(voiceThings);
 		      break;
+		case "body_jp":
+		      buildActionSentence(partsOfTheBody_jp,"あなたの%sに触れます");
+		      break;
 	  }
     });
 
@@ -430,6 +469,14 @@ function buildObjectWords(stuff){
 	console.log("arr end");
 	}
 	//console.log(arr);
+}
+function buildActionSentence(ar,sentence){
+	if(sentence.indexOf("%s")>-1){
+		for(var i=0;i<ar.length;i++){
+		ar[i]=sentence.replace("%s",ar[i]);
+		}
+	}
+	buildActionWords(ar);
 }
 function buildActionWords(ar){
 	console.log("buildActionWords...");
@@ -603,6 +650,7 @@ buildActionWords(generalBodyMoves);
   <option value="office">Office</option> 
   <option value="pen">Things you can do with a pen</option> 
   <option value="voiceThings">Voice things</option> 
+  <option value="body_jp">(JP)Parts of the body</option>
 </select>
 
   <h3>Learn Words</h3>

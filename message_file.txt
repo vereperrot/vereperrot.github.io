@@ -1,6 +1,4 @@
 [*]  update tpr app
- Add action words
- Fill random number into the sentence "Walk NUMBER steps" and  "Draw NUMBER circles".
- When I complete a quiz, play "cool! You complete it. "
+ Add parts of the body jp words.
 
 
