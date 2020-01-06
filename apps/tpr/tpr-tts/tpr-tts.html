@@ -285,7 +285,6 @@ var clothing=[
 "shoes ",
 "coat ",
 "underwear ",
-"sock ",
 "socks ",
 "watch ",
 "sweater ",
@@ -388,58 +387,76 @@ var partsOfTheBody_jp=[
     $('#category').change(function(){
     var cat=document.getElementById("category").value;
 	    arr=[];
+	    current_words=[];
 	    index=-1;
 	    console.log("you select "+cat);
 	  switch(cat){
 			  case "move":
+			  current_words=generalBodyMoves;
 		      buildActionWords(generalBodyMoves);
 			  break;
 			  case "face":
+			  current_words=facialThings;
 		      buildActionWords(facialThings);
 			  break;
 		  case "kitchenTable":
+			  current_words=kitchenTableStuff;
 		      buildObjectWords(kitchenTableStuff);
 		      break;
 	          case "body":
+			  current_words=partsOfTheBody;
 		      buildActionWords(partsOfTheBody);
 		      break;
 		  case "kitchenStuff":
+			  current_words=kitchenStuff;
 		      buildObjectWords(kitchenStuff);
 		      break;
 		case "basicFoods":
+			  current_words=basicFoods;
 		      buildObjectWords(basicFoods);
 		      break;
 		case "drinks":
+			  current_words=drinks;
 		      buildObjectWords(drinks);
 		      break;
 		case "fruitsVegetables":
+			  current_words=fruitsVegetables;
 		      buildObjectWords(fruitsVegetables);
 		      break;
 		case "livingRoom":
+			  current_words=livingRoom;
 		      buildObjectWords(livingRoom);
 		      break;
 		case "bedroom":
+			  current_words=bedroom;
 		      buildObjectWords(bedroom);
 		      break;
 		case "bathroom":
+			  current_words=bathroom;
 		      buildObjectWords(bathroom);
 		      break;
 		case "householdItems":
+			  current_words=householdItems;
 		      buildObjectWords(householdItems);
 		      break;
 		case "clothing":
+			  current_words=clothing;
 		      buildObjectWords(clothing);
 		      break;
 		case "office":
+			  current_words=office;
 		      buildObjectWords(office);
 		      break;
 		case "pen":
+			  current_words=pen;
 		      buildActionWords(pen);
 		      break;
 		case "voiceThings":
+			  current_words=voiceThings;
 		      buildActionWords(voiceThings);
 		      break;
 		case "body_jp":
+			  current_words=partsOfTheBody_jp;
 		      buildActionSentence(partsOfTheBody_jp,"あなたの%sに触れます");
 		      break;
 	  }
@@ -503,17 +520,38 @@ function buildActionWords(ar){
 	console.log(arr);
 }
 //arr=generalBodyMoves.concat(facialThings).concat(partsOfTheBody);
-    $('#shuffle').click(function(){
+    $('#shuffle').click(function(e){
 	    $('#index').val('shuffle...');
 	    shuffle(arr);
 	    index=-1;
 	    $('#index').val('shuffled');
+	    // Cancel the default action
+    e.preventDefault();
     })
-    $('#showword').click(function(){
+    $('#pict').hide();
+    $('#showpicture').click(function(e){
+	    var word="";
+	    for(var j=0;j<current_words.length;j++){
+	if(arr[index].indexOf(current_words[j])>-1){
+		console.log('arr[i]='+arr[i]);
+		console.log('curr='+current_words[j]);
+		word=current_words[j];
+		break;
+	}
+	    }
+	      var text =word.trim();//arr[index].trim();
+	    $('#pict').attr('src','images\\'+text+'.jpg');
+	    $('#pict').show();
+		    // Cancel the default action
+    e.preventDefault();
+    })
+    $('#showword').click(function(e){
       var text =arr[index];// $('#message').val();
 	    $('#index').val(text);
+	    // Cancel the default action
+    e.preventDefault();
     })
-    $('#playagain').click(function(){
+    $('#playagain').click(function(e){
       var text =arr[index];// $('#message').val();
       var msg = new SpeechSynthesisUtterance();
       var voices = window.speechSynthesis.getVoices();
@@ -527,6 +565,8 @@ function buildActionWords(ar){
       };
 
       speechSynthesis.speak(msg);
+	    // Cancel the default action
+    e.preventDefault();
     })
 var index=-1;
 var arr=[];
@@ -534,7 +574,7 @@ var MAX_ARR_SIZE=20;
 //inital words
 buildActionWords(generalBodyMoves);
 
-    $('#speaktpr').click(function(){
+    $('#speaktpr').click(function(e){
 	    if(index>=arr.length){
 		    return;
 	    }
@@ -560,8 +600,10 @@ buildActionWords(generalBodyMoves);
       };
 
       speechSynthesis.speak(msg);
+	    // Cancel the default action
+    e.preventDefault();
     })
-    $('#speak').click(function(){
+    $('#speak').click(function(e){
       var text = $('#message').val();
       var msg = new SpeechSynthesisUtterance();
       var voices = window.speechSynthesis.getVoices();
@@ -575,6 +617,8 @@ buildActionWords(generalBodyMoves);
       };
 
       speechSynthesis.speak(msg);
+	    // Cancel the default action
+    e.preventDefault();
     })
   } else {
     $('#modal1').openModal();
@@ -629,7 +673,11 @@ buildActionWords(generalBodyMoves);
 	<h3>HINT</h3>
     <a href="#" id="playagain" class="waves-effect waves-light btn">1. Play again</a>
 	<br/>
-    <a href="#" id="showword" class="waves-effect waves-light btn">2. Show word</a>
+    <a href="#" id="showpicture" class="waves-effect waves-light btn">2. Show picture</a>
+	<br/>
+    <img id="pict" width=240 height=240 src="images\dog.jpg"/>
+	<br/>
+    <a href="#" id="showword" class="waves-effect waves-light btn">3. Show word</a>
   </form>  
   <hr/>
 
