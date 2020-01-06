@@ -1,7 +1,4 @@
 [*]  update tpr app
- When the page loaded, hide the picture.
-Prevent a click on a link from jumping to top of page.
-Click "SHOW PICTURE" button to toggle the picture.
-Click "SHOW PICTURE" button to show the picture in clothing section.
+ refine link
 
 
