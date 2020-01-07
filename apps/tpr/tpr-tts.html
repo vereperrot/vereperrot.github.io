@@ -1,10 +1,17 @@
 <!--from:https://codepen.io/SteveJRobertson/pen/emGWaR-->
 <head>
+	<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
 </head>
 <body>
 <script>
+	function test(t){
+	console.log(t);
+	console.log(t.attr('src'));
+}
 $(function(){
   if ('speechSynthesis' in window) {
     speechSynthesis.onvoiceschanged = function() {
@@ -178,14 +185,59 @@ var basicFoods=[
 "yogurt ",
 "candy"
 ];
+var drinks_jp=[
+"飲み物",
+"茶",
+"お茶",
+"コーヒー",
+"牛乳",
+"水",
+"ジュース",
+"ソーダ水",
+"ヨーグルト",
+"ビール",
+"ワイン"
+];
 var drinks=[
+"drink",
 "water ",
 "milk ",
 "juice ",
 "soda ",
 "yogurt",
 "coffee ",
-"tea "
+"tea ",
+"beer",
+"wine",
+"green tea "
+];
+var fruitsVegetables_jp=[
+"リンゴ",
+"バナナ",
+"オレンジ",
+"プラム",
+"ブドウ",
+"イチジク",
+"日付",
+"レーズン",
+"レモン",
+"ザクロ",
+"スイカ",
+"トマト",
+"キュウリ",
+"ズッキーニ",
+"タマネギ",
+"ニンジン",
+"ナス",
+"小さなナス",
+"ポテト",
+"ニンニク",
+"パセリ",
+"レタス",
+"ブドウの葉",
+"セロリ",
+"ミント",
+"キャベツ"
 ];
 var fruitsVegetables=[
 "apple ",
@@ -195,7 +247,7 @@ var fruitsVegetables=[
 "grapes ",
 "fig ",
 "dates ",
-"raisons ",
+"raisins ",
 "lemon ",
 "pomegranate ",
 "watermelon ",
@@ -278,6 +330,23 @@ var householdItems=[
 "iron ",
 "ironing board ",
 "clothes pin "
+];
+var clothing_jp=[
+"シャツ",
+"パンツ",
+"靴",
+"コート",
+"下着",
+"靴下",
+"時計",
+"セーター",
+"帽子",
+"ベルト",
+"ドレスシャツ",
+"ネクタイ",
+"ドレス",
+"スカート",
+"ブラウス"
 ];
 var clothing=[
 "shirt ",
@@ -443,6 +512,10 @@ var partsOfTheBody_jp=[
 			  current_words=clothing;
 		      buildObjectWords(clothing);
 		      break;
+		case "clothing_jp":
+			  current_words=clothing_jp;
+		      buildObjectWords(clothing_jp);
+		      break;
 		case "office":
 			  current_words=office;
 		      buildObjectWords(office);
@@ -458,6 +531,14 @@ var partsOfTheBody_jp=[
 		case "body_jp":
 			  current_words=partsOfTheBody_jp;
 		      buildActionSentence(partsOfTheBody_jp,"あなたの%sに触れます");
+		      break;
+		case "fruitsVegetables_jp":
+			  current_words=fruitsVegetables_jp;
+		      buildActionSentence(fruitsVegetables_jp,"%sをください。");
+		      break;
+		case "drinks_jp":
+			  current_words=drinks_jp;
+		      buildActionSentence(drinks_jp,"%sを飲んでください。");
 		      break;
 	  }
     });
@@ -529,11 +610,45 @@ function buildActionWords(ar){
     e.preventDefault();
     })
     $('#pict').hide();
+$(document).on('click','img.learn_img',function(e) {
+	var text=$(this).attr('data-word');
+	console.log(text);
+      var msg = new SpeechSynthesisUtterance();
+      var voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[$('#voices').val()];
+      msg.rate = $('#rate').val() / 10;
+      msg.pitch = $('#pitch').val();
+      msg.text = text;
+
+      msg.onend = function(e) {
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+      };
+
+      speechSynthesis.speak(msg);
+})
+var buildCards= function(words,imgNames,list,e) {
+    var html=$(list).html().trim();
+    if(html.length>0)$(list).html("");
+    else{
+	for(var j=0;j<words.length;j++){
+		var w=words[j].trim();
+		var name=imgNames[j].trim();
+		html+="<li class=\"collection-item\"><img class=\"learn_img\" data-word='"+w+"' width=240 height=240 src=\"images\\"+name+".jpg\"/></li>";
+		$(list).html(html);
+	}
+    }
+    e.preventDefault();
+};
+    $('#clothing_jp').click(function(e){
+	    buildCards(clothing_jp,clothing,'#clothing_li_jp',e);
+    })
+    $('#clothing').click(function(e){
+	    buildCards(clothing,clothing,'#clothing_li',e);
+    })
     $('#showpicture').click(function(e){
 	    var word="";
 	    for(var j=0;j<current_words.length;j++){
 	if(arr[index].indexOf(current_words[j])>-1){
-		console.log('arr[i]='+arr[i]);
 		console.log('curr='+current_words[j]);
 		word=current_words[j];
 		break;
@@ -625,7 +740,7 @@ buildActionWords(generalBodyMoves);
   }
 });
 </script>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.min.css">
+<link rel="stylesheet" href="css/materialize.min.css">
 <div class="container">
 	
   <div class="row">
@@ -680,7 +795,6 @@ buildActionWords(generalBodyMoves);
     <a href="#" id="showword" class="waves-effect waves-light btn">3. Show word</a>
   </form>  
   <hr/>
-
 <select id="category" style="display:block !important">
   <option value="move">General body movements</option>
   <option value="face">Facial things</option>
@@ -699,12 +813,22 @@ buildActionWords(generalBodyMoves);
   <option value="pen">Things you can do with a pen</option> 
   <option value="voiceThings">Voice things</option> 
   <option value="body_jp">(JP)Parts of the body</option>
+  <option value="drinks_jp">(JP)Drinks</option>
+  <option value="fruitsVegetables_jp">(JP)Fruits Vegetables</option>
+  <option value="clothing_jp">(JP)*Clothing</option>
 </select>
 
   <h3>Learn Words</h3>
   <a href="#" id="generalBodyMoves" class="waves-effect waves-light btn">General body movements</a><br/>
   <a href="#" id="facialThings" class="waves-effect waves-light btn">Facial things</a><br/>
   <a href="#" id="partsOfTheBody" class="waves-effect waves-light btn">Parts of the body</a><br/>
+  <a href="#" id="clothing" class="waves-effect waves-light btn">Clothing</a>
+  <ul class="collection with-header" id="clothing_li">
+  </ul>
+  <a href="#" id="clothing_jp" class="waves-effect waves-light btn">(JP)Clothing</a>
+  <ul class="collection with-header" id="clothing_li_jp">
+  </ul>
+  <br/>
 </div>
 
 <div id="modal1" class="modal">

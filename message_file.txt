@@ -1,4 +1,8 @@
 [*]  update tpr app
- refine link
+ Fixed unsecure css file
+Add Japanese drink words for quiz
+Add Japanese fruits words for quiz
+Add "Learn clothing words" function
+Add "Learn Japanese clothing words" function
 
 
