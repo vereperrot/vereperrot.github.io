@@ -1,4 +1,2 @@
 [*]  update tpr app
-Add Japanese amount words for quiz
-Add Japanese "things you can do with a pen" words for quiz
-
+rename image files
