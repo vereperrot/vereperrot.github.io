@@ -394,6 +394,16 @@ var pen=[
 "draw %d circles",
 "draw %d squares"
 	];
+var pen_jp=[
+"ペンを拾う",
+"キャップを脱ぐ",
+"キャップを元に戻す",
+"言葉を書く",
+"あなたの名前を署名",
+"%qの行を描く",
+"%qの円を描く",
+"%qの正方形を描く"
+	];
 var voiceThings=[
 "speak ",
 "sing ",
@@ -554,7 +564,11 @@ var partsOfTheBody_jp=[
 		      break;
 	  }
     });
-
+/*
+	ex. put pen down
+	pen is stuff
+	verbs=['put %s down'];
+*/
 function buildObjectWords(stuff){
   console.log("buildObjectWords...");
   shuffle(verbs);
@@ -580,6 +594,11 @@ function buildObjectWords(stuff){
 	}
 	//console.log(arr);
 }
+/*
+	ex.
+	ar=['pen'];
+	sentence='put %s down';
+*/
 function buildActionSentence(ar,sentence){
 	if(sentence.indexOf("%s")>-1){
 		for(var i=0;i<ar.length;i++){
@@ -588,6 +607,10 @@ function buildActionSentence(ar,sentence){
 	}
 	buildActionWords(ar);
 }
+/*
+	ex.
+	ar=['touch your face'];
+*/
 function buildActionWords(ar){
 	console.log("buildActionWords...");
 	console.log(numbers);
