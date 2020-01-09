@@ -815,21 +815,15 @@ buildActionWords(generalBodyMoves);
         <label>Write message</label>
       </div>
     </div>
-    <a href="#" id="speak" class="waves-effect waves-light btn">Speak</a>
-    <a href="#" id="speaktpr" class="waves-effect waves-light btn">TPR Speak</a>
-    <a href="#" id="shuffle" class="waves-effect waves-light btn">Shuffle</a>
-        <textarea id="index" class="materialize-textarea"></textarea>
-	<br/>
-	<h3>HINT</h3>
-    <a href="#" id="playagain" class="waves-effect waves-light btn">1. Play again</a>
-	<br/>
-    <a href="#" id="showpicture" class="waves-effect waves-light btn">2. Show picture</a>
-	<br/>
-    <img id="pict" width=240 height=240 src="images\dog.jpg"/>
-	<br/>
-    <a href="#" id="showword" class="waves-effect waves-light btn">3. Show word</a>
-  </form>  
-  <hr/>
+    <div class="row">
+	    <a href="#" id="speak" class="waves-effect waves-light btn">Speak</a>
+    </div>
+    <div class="row">
+      <div class="col s6">
+	    <a href="#" id="speaktpr" class="waves-effect waves-light btn">TPR Speak</a>
+	    <a href="#" id="shuffle" class="waves-effect waves-light btn">Shuffle</a>
+      </div>
+      <div class="col s6">
 <select id="category" style="display:block !important">
   <option value="move">General body movements</option>
   <option value="face">Facial things</option>
@@ -852,6 +846,22 @@ buildActionWords(generalBodyMoves);
   <option value="fruitsVegetables_jp">(JP)Fruits Vegetables</option>
   <option value="clothing_jp">(JP)*Clothing</option>
 </select>
+      </div>
+    </div>
+    <div class="row">
+        <textarea id="index" class="materialize-textarea"></textarea>
+    </div>
+	<br/>
+	<h3>HINT</h3>
+    <a href="#" id="playagain" class="waves-effect waves-light btn">1. Play again</a>
+	<br/>
+    <a href="#" id="showpicture" class="waves-effect waves-light btn">2. Show picture</a>
+	<br/>
+    <img id="pict" width=240 height=240 src="images\dog.jpg"/>
+	<br/>
+    <a href="#" id="showword" class="waves-effect waves-light btn">3. Show word</a>
+  </form>  
+  <hr/>
 
   <h3>Learn Words</h3>
   <a href="#" id="generalBodyMoves" class="waves-effect waves-light btn">General body movements</a><br/>

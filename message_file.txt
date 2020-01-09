@@ -1,2 +1,2 @@
 [*]  update tpr app
-rename image files
+change layout
