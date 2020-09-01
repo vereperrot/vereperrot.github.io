@@ -1,0 +1,59 @@
+<html>
+	<button onclick="GenerateListenLinks()">Generate Google Translate Paragraph Links</button><br/>
+	<input type="text" id="glink" value="https://translate.google.com.tw/?hl=en&tab=TT&authuser=0#view=home&op=translate&sl=en&tl=zh-CN&text="/><br/>
+	<textarea id="text"></textarea>
+	<h2>Paragraph Links</h2>
+	<div id="links">
+
+	</div>
+	<hr>
+	<button onclick="GenerateSentenceLinks()">Generate Google Translate Sentence Links</button><br/>
+	<input type="text" id="SentenceGlink" value="https://translate.google.com.tw/?hl=en&tab=TT&authuser=0#view=home&op=translate&sl=en&tl=zh-CN&text="/><br/>
+	<textarea id="SentenceText"></textarea>
+	<h2>Sentence Links</h2>
+	<div id="SentenceLinks">
+
+	</div>
+	<script>
+		function GenerateSentenceLinks(){
+			var s=document.getElementById("SentenceText").value;
+			var glink=document.getElementById("SentenceGlink").value;
+			console.log(s);
+			lines=s.match(/\(?[^\.\?\!]+[\.!\?]\)?/g);
+			console.log(lines);
+			GenerateLinks(glink,lines,document.getElementById("SentenceLinks"));
+		}
+		function GenerateLinks(glink,lines,links){
+			var html="";
+			links.innerHTML="";
+			for(var i=0;i<lines.length;i++){
+				var tmp=encodeURI(lines[i]);
+				tmp=tmp.replace("'","%27");
+				console.log(tmp);
+				html="<p><a href='"+glink+tmp+"' target='_blank'>"+lines[i]+"</a></p>";
+					console.log(html);
+				links.innerHTML+=html;
+			}
+		}
+		function GenerateListenLinks(){
+			var s=document.getElementById("text").value;
+			var glink=document.getElementById("glink").value;
+			console.log(s);
+			lines = s.split("\n");
+			var lines= lines.filter(Boolean);
+			console.log(lines);
+			GenerateLinks(glink,lines,document.getElementById("links"));
+			/*var html="";
+			var links=document.getElementById("links");
+			links.innerHTML="";
+			for(var i=0;i<lines.length;i++){
+				var tmp=encodeURI(lines[i]);
+				tmp=tmp.replace("'","%27");
+				console.log(tmp);
+				html="<p><a href='"+glink+tmp+"' target='_blank'>"+lines[i]+"</a></p>";
+					console.log(html);
+				links.innerHTML+=html;
+			}*/
+		}
+	</script>
+</html>
